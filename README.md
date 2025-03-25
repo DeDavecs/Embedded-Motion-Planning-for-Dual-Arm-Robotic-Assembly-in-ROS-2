@@ -24,3 +24,8 @@ https://docs.google.com/document/d/1OQLkVzkLvqzL7v4BQNEu1JERFHc08q8_XpsmeVT9Lkc/
    ros2 launch moveit2_tutorials demo.launch.py
   ```
 
+## Useful commands
+```
+   ros2 launch ur_simulation_gz ur_sim_moveit.launch.py ur_type:=ur5e
+```
+
