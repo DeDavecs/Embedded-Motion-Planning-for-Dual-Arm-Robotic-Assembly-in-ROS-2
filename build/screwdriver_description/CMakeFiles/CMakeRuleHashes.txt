@@ -1,2 +1,0 @@
-# Hashes of file build rules.
-980c521e8002360ec2fc1b54b59949de CMakeFiles/screwdriver_description_uninstall

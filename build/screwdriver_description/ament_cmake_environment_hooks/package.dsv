@@ -1,4 +1,0 @@
-source;share/screwdriver_description/local_setup.bash
-source;share/screwdriver_description/local_setup.dsv
-source;share/screwdriver_description/local_setup.sh
-source;share/screwdriver_description/local_setup.zsh

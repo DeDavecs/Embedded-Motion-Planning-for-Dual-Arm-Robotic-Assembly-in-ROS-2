@@ -1,9 +1,0 @@
-/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description/CMakeFiles/uninstall.dir
-/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description/CMakeFiles/screwdriver_description_uninstall.dir
-/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description/CMakeFiles/test.dir
-/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description/CMakeFiles/edit_cache.dir
-/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description/CMakeFiles/rebuild_cache.dir
-/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description/CMakeFiles/list_install_components.dir
-/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description/CMakeFiles/install.dir
-/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description/CMakeFiles/install/local.dir
-/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description/CMakeFiles/install/strip.dir
