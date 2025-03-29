@@ -1,0 +1,414 @@
+[0.071s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.071s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=22, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x78e824acac60>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x78e824aca750>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x78e824aca750>>, mixin_verb=('build',))
+[0.092s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.092s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.092s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.092s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.092s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.092s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.092s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces'
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.092s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.093s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(motion_planning) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(motion_planning) by extension 'ignore'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(motion_planning) by extension 'ignore_ament_install'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(motion_planning) by extensions ['colcon_pkg']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(motion_planning) by extension 'colcon_pkg'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(motion_planning) by extensions ['colcon_meta']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(motion_planning) by extension 'colcon_meta'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(motion_planning) by extensions ['ros']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(motion_planning) by extension 'ros'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(motion_planning) by extensions ['cmake', 'python']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(motion_planning) by extension 'cmake'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(motion_planning) by extension 'python'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(motion_planning) by extensions ['python_setup_py']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(motion_planning) by extension 'python_setup_py'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments) by extensions ['ignore', 'ignore_ament_install']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments) by extension 'ignore'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments) by extension 'ignore_ament_install'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments) by extensions ['colcon_pkg']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments) by extension 'colcon_pkg'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments) by extensions ['colcon_meta']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments) by extension 'colcon_meta'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments) by extensions ['ros']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments) by extension 'ros'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments) by extensions ['cmake', 'python']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments) by extension 'cmake'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments) by extension 'python'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments) by extensions ['python_setup_py']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments) by extension 'python_setup_py'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/screwdriver_description) by extensions ['ignore', 'ignore_ament_install']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/screwdriver_description) by extension 'ignore'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/screwdriver_description) by extension 'ignore_ament_install'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/screwdriver_description) by extensions ['colcon_pkg']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/screwdriver_description) by extension 'colcon_pkg'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/screwdriver_description) by extensions ['colcon_meta']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/screwdriver_description) by extension 'colcon_meta'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/screwdriver_description) by extensions ['ros']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/screwdriver_description) by extension 'ros'
+[0.111s] DEBUG:colcon.colcon_core.package_identification:Package 'src/attachments/screwdriver_description' with type 'ros.ament_cmake' and name 'screwdriver_description'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes) by extensions ['ignore', 'ignore_ament_install']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes) by extension 'ignore'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes) by extension 'ignore_ament_install'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes) by extensions ['colcon_pkg']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes) by extension 'colcon_pkg'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes) by extensions ['colcon_meta']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes) by extension 'colcon_meta'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes) by extensions ['ros']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes) by extension 'ros'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes) by extensions ['cmake', 'python']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes) by extension 'cmake'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes) by extension 'python'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes) by extensions ['python_setup_py']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes) by extension 'python_setup_py'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes/urdf_tutorial) by extensions ['ignore', 'ignore_ament_install']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes/urdf_tutorial) by extension 'ignore'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes/urdf_tutorial) by extension 'ignore_ament_install'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes/urdf_tutorial) by extensions ['colcon_pkg']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes/urdf_tutorial) by extension 'colcon_pkg'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes/urdf_tutorial) by extensions ['colcon_meta']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes/urdf_tutorial) by extension 'colcon_meta'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes/urdf_tutorial) by extensions ['ros']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(src/attachments/tutorial_shapes/urdf_tutorial) by extension 'ros'
+[0.112s] DEBUG:colcon.colcon_core.package_identification:Package 'src/attachments/tutorial_shapes/urdf_tutorial' with type 'ros.ament_cmake' and name 'urdf_tutorial'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment) by extensions ['ignore', 'ignore_ament_install']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment) by extension 'ignore'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment) by extension 'ignore_ament_install'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment) by extensions ['colcon_pkg']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment) by extension 'colcon_pkg'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment) by extensions ['colcon_meta']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment) by extension 'colcon_meta'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment) by extensions ['ros']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/environment) by extension 'ros'
+[0.112s] DEBUG:colcon.colcon_core.package_identification:Package 'src/environment' with type 'ros.ament_cmake' and name 'environment'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extensions ['ignore', 'ignore_ament_install']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extension 'ignore'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extension 'ignore_ament_install'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extensions ['colcon_pkg']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extension 'colcon_pkg'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extensions ['colcon_meta']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extension 'colcon_meta'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extensions ['ros']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extension 'ros'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extensions ['cmake', 'python']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extension 'cmake'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extension 'python'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extensions ['python_setup_py']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots) by extension 'python_setup_py'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation) by extensions ['ignore', 'ignore_ament_install']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation) by extension 'ignore'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation) by extension 'ignore_ament_install'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation) by extensions ['colcon_pkg']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation) by extension 'colcon_pkg'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation) by extensions ['colcon_meta']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation) by extension 'colcon_meta'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation) by extensions ['ros']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation) by extension 'ros'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation) by extensions ['cmake', 'python']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation) by extension 'cmake'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation) by extension 'python'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation) by extensions ['python_setup_py']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation) by extension 'python_setup_py'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz) by extensions ['ignore', 'ignore_ament_install']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz) by extension 'ignore'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz) by extension 'ignore_ament_install'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz) by extensions ['colcon_pkg']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz) by extension 'colcon_pkg'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz) by extensions ['colcon_meta']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz) by extension 'colcon_meta'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz) by extensions ['ros']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz) by extension 'ros'
+[0.114s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz' with type 'ros.ament_cmake' and name 'ur_simulation_gz'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_block) by extensions ['ignore', 'ignore_ament_install']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_block) by extension 'ignore'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_block) by extension 'ignore_ament_install'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_block) by extensions ['colcon_pkg']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_block) by extension 'colcon_pkg'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_block) by extensions ['colcon_meta']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_block) by extension 'colcon_meta'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_block) by extensions ['ros']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_block) by extension 'ros'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_block) by extensions ['cmake', 'python']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_block) by extension 'cmake'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_block) by extension 'python'
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_block) by extensions ['python_setup_py']
+[0.114s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_block) by extension 'python_setup_py'
+[0.114s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.114s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.114s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.114s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.114s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.125s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.125s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.126s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install
+[0.126s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/dstreib/ros2_bt/install
+[0.127s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 425 installed packages in /opt/ros/jazzy
+[0.128s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'environment' build argument 'cmake_args' from command line to 'None'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'environment' build argument 'cmake_target' from command line to 'None'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'environment' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'environment' build argument 'cmake_clean_cache' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'environment' build argument 'cmake_clean_first' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'environment' build argument 'cmake_force_configure' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'environment' build argument 'ament_cmake_args' from command line to 'None'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'environment' build argument 'catkin_cmake_args' from command line to 'None'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'environment' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.158s] DEBUG:colcon.colcon_core.verb:Building package 'environment' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/environment', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment', 'merge_install': False, 'path': '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/environment', 'symlink_install': False, 'test_result_base': None}
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'screwdriver_description' build argument 'cmake_args' from command line to 'None'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'screwdriver_description' build argument 'cmake_target' from command line to 'None'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'screwdriver_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'screwdriver_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'screwdriver_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'screwdriver_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'screwdriver_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'screwdriver_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.158s] Level 5:colcon.colcon_core.verb:set package 'screwdriver_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.158s] DEBUG:colcon.colcon_core.verb:Building package 'screwdriver_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description', 'merge_install': False, 'path': '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/attachments/screwdriver_description', 'symlink_install': False, 'test_result_base': None}
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'ur_simulation_gz' build argument 'cmake_args' from command line to 'None'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'ur_simulation_gz' build argument 'cmake_target' from command line to 'None'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'ur_simulation_gz' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'ur_simulation_gz' build argument 'cmake_clean_cache' from command line to 'False'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'ur_simulation_gz' build argument 'cmake_clean_first' from command line to 'False'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'ur_simulation_gz' build argument 'cmake_force_configure' from command line to 'False'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'ur_simulation_gz' build argument 'ament_cmake_args' from command line to 'None'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'ur_simulation_gz' build argument 'catkin_cmake_args' from command line to 'None'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'ur_simulation_gz' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.159s] DEBUG:colcon.colcon_core.verb:Building package 'ur_simulation_gz' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/ur_simulation_gz', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz', 'merge_install': False, 'path': '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz', 'symlink_install': False, 'test_result_base': None}
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'urdf_tutorial' build argument 'cmake_args' from command line to 'None'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'urdf_tutorial' build argument 'cmake_target' from command line to 'None'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'urdf_tutorial' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'urdf_tutorial' build argument 'cmake_clean_cache' from command line to 'False'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'urdf_tutorial' build argument 'cmake_clean_first' from command line to 'False'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'urdf_tutorial' build argument 'cmake_force_configure' from command line to 'False'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'urdf_tutorial' build argument 'ament_cmake_args' from command line to 'None'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'urdf_tutorial' build argument 'catkin_cmake_args' from command line to 'None'
+[0.159s] Level 5:colcon.colcon_core.verb:set package 'urdf_tutorial' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.159s] DEBUG:colcon.colcon_core.verb:Building package 'urdf_tutorial' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/urdf_tutorial', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial', 'merge_install': False, 'path': '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/attachments/tutorial_shapes/urdf_tutorial', 'symlink_install': False, 'test_result_base': None}
+[0.159s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.160s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.160s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/environment' with build type 'ament_cmake'
+[0.160s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/environment'
+[0.162s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.162s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.162s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.165s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/attachments/screwdriver_description' with build type 'ament_cmake'
+[0.165s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/attachments/screwdriver_description'
+[0.165s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.165s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.168s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz' with build type 'ament_cmake'
+[0.168s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz'
+[0.168s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.168s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.170s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/attachments/tutorial_shapes/urdf_tutorial' with build type 'ament_cmake'
+[0.170s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/attachments/tutorial_shapes/urdf_tutorial'
+[0.170s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.170s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.176s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/environment': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/environment -- -j22 -l22
+[0.177s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description -- -j22 -l22
+[0.178s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/ur_simulation_gz': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz -DCMAKE_INSTALL_PREFIX=/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz
+[0.181s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/urdf_tutorial': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/attachments/tutorial_shapes/urdf_tutorial -DCMAKE_INSTALL_PREFIX=/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial
+[0.207s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/environment' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/environment -- -j22 -l22
+[0.215s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/environment': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/environment
+[0.216s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description -- -j22 -l22
+[0.216s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description
+[0.228s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(screwdriver_description)
+[0.228s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description
+[0.229s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description' for CMake module files
+[0.229s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description' for CMake config files
+[0.229s] Level 1:colcon.colcon_core.shell:create_environment_hook('screwdriver_description', 'cmake_prefix_path')
+[0.229s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/hook/cmake_prefix_path.ps1'
+[0.230s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/hook/cmake_prefix_path.dsv'
+[0.230s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/hook/cmake_prefix_path.sh'
+[0.231s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/bin'
+[0.231s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/lib/pkgconfig/screwdriver_description.pc'
+[0.231s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/lib/python3.12/site-packages'
+[0.231s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/bin'
+[0.231s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/package.ps1'
+[0.231s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/package.dsv'
+[0.232s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/package.sh'
+[0.232s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/package.bash'
+[0.232s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/package.zsh'
+[0.232s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/colcon-core/packages/screwdriver_description)
+[0.233s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(screwdriver_description)
+[0.233s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description' for CMake module files
+[0.233s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description' for CMake config files
+[0.233s] Level 1:colcon.colcon_core.shell:create_environment_hook('screwdriver_description', 'cmake_prefix_path')
+[0.233s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/hook/cmake_prefix_path.ps1'
+[0.233s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/hook/cmake_prefix_path.dsv'
+[0.234s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/hook/cmake_prefix_path.sh'
+[0.234s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/bin'
+[0.234s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/lib/pkgconfig/screwdriver_description.pc'
+[0.234s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/lib/python3.12/site-packages'
+[0.234s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/bin'
+[0.234s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/package.ps1'
+[0.234s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/package.dsv'
+[0.235s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/package.sh'
+[0.235s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/package.bash'
+[0.235s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/package.zsh'
+[0.235s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/colcon-core/packages/screwdriver_description)
+[0.235s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(environment)
+[0.235s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment' for CMake module files
+[0.236s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment' for CMake config files
+[0.236s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/environment' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/environment
+[0.236s] Level 1:colcon.colcon_core.shell:create_environment_hook('environment', 'cmake_prefix_path')
+[0.236s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/hook/cmake_prefix_path.ps1'
+[0.236s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/hook/cmake_prefix_path.dsv'
+[0.237s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/hook/cmake_prefix_path.sh'
+[0.237s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/bin'
+[0.237s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/lib/pkgconfig/environment.pc'
+[0.237s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/lib/python3.12/site-packages'
+[0.237s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/bin'
+[0.237s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/package.ps1'
+[0.237s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/package.dsv'
+[0.238s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/package.sh'
+[0.238s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/package.bash'
+[0.238s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/package.zsh'
+[0.238s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/colcon-core/packages/environment)
+[0.239s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(environment)
+[0.239s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment' for CMake module files
+[0.239s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment' for CMake config files
+[0.239s] Level 1:colcon.colcon_core.shell:create_environment_hook('environment', 'cmake_prefix_path')
+[0.239s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/hook/cmake_prefix_path.ps1'
+[0.239s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/hook/cmake_prefix_path.dsv'
+[0.239s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/hook/cmake_prefix_path.sh'
+[0.240s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/bin'
+[0.240s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/lib/pkgconfig/environment.pc'
+[0.240s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/lib/python3.12/site-packages'
+[0.240s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/bin'
+[0.240s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/package.ps1'
+[0.240s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/package.dsv'
+[0.240s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/package.sh'
+[0.241s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/package.bash'
+[0.241s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/package.zsh'
+[0.241s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/colcon-core/packages/environment)
+[0.706s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/urdf_tutorial' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/attachments/tutorial_shapes/urdf_tutorial -DCMAKE_INSTALL_PREFIX=/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial
+[0.706s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/urdf_tutorial': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/urdf_tutorial -- -j22 -l22
+[0.734s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/urdf_tutorial' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/urdf_tutorial -- -j22 -l22
+[0.735s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/urdf_tutorial': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/urdf_tutorial
+[0.743s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(urdf_tutorial)
+[0.743s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial' for CMake module files
+[0.743s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/urdf_tutorial' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/urdf_tutorial
+[0.744s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial' for CMake config files
+[0.744s] Level 1:colcon.colcon_core.shell:create_environment_hook('urdf_tutorial', 'cmake_prefix_path')
+[0.744s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/hook/cmake_prefix_path.ps1'
+[0.744s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/hook/cmake_prefix_path.dsv'
+[0.744s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/hook/cmake_prefix_path.sh'
+[0.744s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/bin'
+[0.744s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/lib/pkgconfig/urdf_tutorial.pc'
+[0.745s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/lib/python3.12/site-packages'
+[0.745s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/bin'
+[0.745s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/package.ps1'
+[0.745s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/package.dsv'
+[0.745s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/package.sh'
+[0.745s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/package.bash'
+[0.746s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/package.zsh'
+[0.746s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/colcon-core/packages/urdf_tutorial)
+[0.746s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(urdf_tutorial)
+[0.746s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial' for CMake module files
+[0.746s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial' for CMake config files
+[0.746s] Level 1:colcon.colcon_core.shell:create_environment_hook('urdf_tutorial', 'cmake_prefix_path')
+[0.746s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/hook/cmake_prefix_path.ps1'
+[0.747s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/hook/cmake_prefix_path.dsv'
+[0.747s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/hook/cmake_prefix_path.sh'
+[0.747s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/bin'
+[0.747s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/lib/pkgconfig/urdf_tutorial.pc'
+[0.747s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/lib/python3.12/site-packages'
+[0.747s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/bin'
+[0.747s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/package.ps1'
+[0.748s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/package.dsv'
+[0.748s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/package.sh'
+[0.748s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/package.bash'
+[0.748s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/urdf_tutorial/package.zsh'
+[0.749s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/urdf_tutorial/share/colcon-core/packages/urdf_tutorial)
+[1.076s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/ur_simulation_gz' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/src/robots/Universal_Robots_ROS2_GZ_Simulation/ur_simulation_gz -DCMAKE_INSTALL_PREFIX=/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz
+[1.077s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/ur_simulation_gz': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/ur_simulation_gz -- -j22 -l22
+[1.110s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/ur_simulation_gz' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/ur_simulation_gz -- -j22 -l22
+[1.111s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/ur_simulation_gz': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/ur_simulation_gz
+[1.118s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur_simulation_gz)
+[1.119s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz' for CMake module files
+[1.119s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/ur_simulation_gz' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/ur_simulation_gz
+[1.119s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz' for CMake config files
+[1.119s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur_simulation_gz', 'cmake_prefix_path')
+[1.119s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/hook/cmake_prefix_path.ps1'
+[1.119s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/hook/cmake_prefix_path.dsv'
+[1.120s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/hook/cmake_prefix_path.sh'
+[1.120s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/bin'
+[1.120s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/lib/pkgconfig/ur_simulation_gz.pc'
+[1.120s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/lib/python3.12/site-packages'
+[1.120s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/bin'
+[1.120s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/package.ps1'
+[1.120s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/package.dsv'
+[1.121s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/package.sh'
+[1.121s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/package.bash'
+[1.121s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/package.zsh'
+[1.121s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/colcon-core/packages/ur_simulation_gz)
+[1.121s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ur_simulation_gz)
+[1.121s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz' for CMake module files
+[1.122s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz' for CMake config files
+[1.122s] Level 1:colcon.colcon_core.shell:create_environment_hook('ur_simulation_gz', 'cmake_prefix_path')
+[1.122s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/hook/cmake_prefix_path.ps1'
+[1.122s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/hook/cmake_prefix_path.dsv'
+[1.122s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/hook/cmake_prefix_path.sh'
+[1.122s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/bin'
+[1.122s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/lib/pkgconfig/ur_simulation_gz.pc'
+[1.122s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/lib/python3.12/site-packages'
+[1.123s] Level 1:colcon.colcon_core.environment:checking '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/bin'
+[1.123s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/package.ps1'
+[1.123s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/package.dsv'
+[1.123s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/package.sh'
+[1.123s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/package.bash'
+[1.123s] INFO:colcon.colcon_core.shell:Creating package script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/ur_simulation_gz/package.zsh'
+[1.124s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/ur_simulation_gz/share/colcon-core/packages/ur_simulation_gz)
+[1.124s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.124s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.124s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.124s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.136s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.136s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.136s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.146s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.146s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/local_setup.ps1'
+[1.147s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/_local_setup_util_ps1.py'
+[1.147s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/setup.ps1'
+[1.148s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/local_setup.sh'
+[1.148s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/_local_setup_util_sh.py'
+[1.148s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/setup.sh'
+[1.149s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/local_setup.bash'
+[1.149s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/setup.bash'
+[1.150s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/local_setup.zsh'
+[1.150s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/setup.zsh'

@@ -1,0 +1,15 @@
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/ament_index/resource_index/package_run_dependencies/environment
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/ament_index/resource_index/parent_prefix_path/environment
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/environment/ament_prefix_path.sh
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/environment/ament_prefix_path.dsv
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/environment/path.sh
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/environment/path.dsv
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/local_setup.bash
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/local_setup.sh
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/local_setup.zsh
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/local_setup.dsv
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/package.dsv
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/ament_index/resource_index/packages/environment
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/cmake/environmentConfig.cmake
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/cmake/environmentConfig-version.cmake
+/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/environment/share/environment/package.xml

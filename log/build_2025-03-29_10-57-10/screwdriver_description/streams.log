@@ -1,0 +1,26 @@
+[0.012s] Invoking command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description -- -j22 -l22
+[0.050s] Invoked command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description -- -j22 -l22
+[0.051s] Invoking command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description
+[0.059s] -- Install configuration: ""
+[0.059s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/launch
+[0.059s] -- Installing: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/launch/display.launch.py
+[0.059s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/rviz
+[0.060s] -- Installing: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/rviz/urdf.rviz
+[0.060s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/urdf
+[0.060s] -- Installing: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/urdf/screwdriver.urdf
+[0.060s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/ament_index/resource_index/package_run_dependencies/screwdriver_description
+[0.060s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/ament_index/resource_index/parent_prefix_path/screwdriver_description
+[0.061s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/environment/ament_prefix_path.sh
+[0.061s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/environment/ament_prefix_path.dsv
+[0.061s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/environment/path.sh
+[0.061s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/environment/path.dsv
+[0.061s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/local_setup.bash
+[0.061s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/local_setup.sh
+[0.061s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/local_setup.zsh
+[0.061s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/local_setup.dsv
+[0.061s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/package.dsv
+[0.061s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/ament_index/resource_index/packages/screwdriver_description
+[0.061s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/cmake/screwdriver_descriptionConfig.cmake
+[0.061s] -- Up-to-date: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/cmake/screwdriver_descriptionConfig-version.cmake
+[0.062s] -- Installing: /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/install/screwdriver_description/share/screwdriver_description/package.xml
+[0.062s] Invoked command in '/home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dstreib/UR5e_Assembly_of_Wooden_Pieces/build/screwdriver_description
