@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot name="screwdriver">
+  <link name="base_link">
+    <!-- Inertial properties (required for physics simulation) -->
+    <inertial>
+      <mass value="1.0"/>  <!-- Adjust mass as needed -->
+      <origin xyz="0 0 0"/>
+      <inertia 
+        ixx="0.01" ixy="0.0" ixz="0.0"
+        iyy="0.01" iyz="0.0"
+        izz="0.01"/>
+    </inertial>
+
+    <!-- Collision properties (important for physical interactions) -->
+    <collision>
+      <geometry>
+        <box size="0.6 10 1"/>
+      </geometry>
+    </collision>
+
+    <!-- Visual representation -->
+    <visual>
+      <geometry>
+        <box size="0.6 10 1"/> <!-- width x length x height -->
+      </geometry>
+    </visual>
+  </link>
+</robot>
+

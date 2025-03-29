@@ -1,0 +1,19 @@
+#install robot description from GitHub
+
+git clone https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git
+rosdep update
+rosdep install --from-paths src --ignore-src -r -y
+colcon build --packages-select ur_description
+source install/setup.bash
+#test with using
+ros2 launch ur_description view_ur.launch.py ur_type:=ur5e
+
+#install gazebo description simulation
+git clone -b jazzy-devel https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation.git
+rosdep update && rosdep install --ignore-src --from-paths . -y
+#had error here!!!
+Add distro "rolling"
+updated cache in /home/dstreib/.ros/rosdep/sources.cache
+ERROR: the following packages/stacks could not have their rosdep keys resolved
+to system dependencies:
+ur_simulation_gazebo: Cannot locate rosdep definition for [gazebo_ros]
