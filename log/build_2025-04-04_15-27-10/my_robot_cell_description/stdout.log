@@ -1,0 +1,47 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.3 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dstreib/ur5e/build/my_robot_cell_description
+-- Install configuration: ""
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/launch
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/launch/view_robot.launch.py
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/meshes
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/meshes/fzi_skyline_v1.png
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/meshes/notexture.png
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/meshes/wall.dae
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/meshes/171005_Motek_Monitor_L.dae
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/meshes/ur_background.jpg
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/meshes/fzi_table.dae
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/rviz
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/rviz/urdf.rviz
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/urdf
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/urdf/my_robot_cell_macro.xacro
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/urdf/my_robot_cell.urdf.xacro
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/ament_index/resource_index/package_run_dependencies/my_robot_cell_description
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/ament_index/resource_index/parent_prefix_path/my_robot_cell_description
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/environment/ament_prefix_path.sh
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/environment/ament_prefix_path.dsv
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/environment/path.sh
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/environment/path.dsv
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/local_setup.bash
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/local_setup.sh
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/local_setup.zsh
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/local_setup.dsv
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/package.dsv
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/ament_index/resource_index/packages/my_robot_cell_description
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/cmake/my_robot_cell_descriptionConfig.cmake
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/cmake/my_robot_cell_descriptionConfig-version.cmake
+-- Installing: /home/dstreib/ur5e/install/my_robot_cell_description/share/my_robot_cell_description/package.xml
