@@ -3,6 +3,8 @@ from launch_ros.parameter_descriptions import ParameterFile
 from launch_ros.substitutions import FindPackageShare
 from moveit_configs_utils import MoveItConfigsBuilder
 from moveit_configs_utils.launches import generate_move_group_launch, generate_moveit_rviz_launch
+import os
+from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, ExecuteProcess
@@ -58,7 +60,26 @@ def generate_launch_description():
     )
 
     # Get MoveIt configuration
-    moveit_config = MoveItConfigsBuilder("my_robot_cell", package_name="moveit_config").to_moveit_configs()
+    moveit_config = (
+        MoveItConfigsBuilder("my_robot_cell", package_name="moveit_config")
+        .moveit_cpp(
+            file_path=os.path.join(
+                get_package_share_directory("motion_planning"),
+                "config",
+                "motion_planning_python_api.yaml"
+            )
+        )
+        .to_moveit_configs()
+    )
+
+    # Create the motion planning Python API node
+    moveit_py_node = Node(
+        name="moveit_py",
+        executable="python3",
+        arguments=[os.path.join(get_package_share_directory("motion_planning"), "scripts", "motion_planning_python_api.py")],
+        output="screen",
+        parameters=[moveit_config.to_dict()]
+    )
 
     # Create the launch description
     return LaunchDescription(
@@ -126,5 +147,7 @@ def generate_launch_description():
                     ]
                 ),
             ),
+            # Add the motion planning Python API node
+            moveit_py_node,
         ]
     ) 
