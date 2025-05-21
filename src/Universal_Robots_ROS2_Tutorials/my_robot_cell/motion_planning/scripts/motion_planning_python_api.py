@@ -64,22 +64,31 @@ def main():
     logger.info("MoveItPy instance created")
 
     ###########################################################################
-    # Plan 1 - set states with predefined string
+    # Plan X - set states with predefined string
     ###########################################################################
 
     # set plan start state using predefined state
-    ur_arm.set_start_state(configuration_name="home")
+    #ur_arm.set_start_state(configuration_name="home")
 
     # set pose goal using predefined state
-    ur_arm.set_goal_state(configuration_name="extended")
+    #ur_arm.set_goal_state(configuration_name="extended")
+
+    # Create single pipeline plan request parameters for Pilz PTP planner
+    #single_plan_parameters = SinglePipelinePlanRequestParameters(
+    #    ur5e,
+    #    "pilz_industrial_motion_planner",
+    #    "PTP"
+    #)
 
     # plan to goal
-    plan_and_execute(ur5e, ur_arm, logger, sleep_time=3.0)
-
+    #plan_and_execute(ur5e, ur_arm, logger, sleep_time=3.0)
+    
+    
+    """
     ###########################################################################
-    # Plan 2 - set goal state with RobotState object
+    # Plan X - set goal state with RobotState object
     ###########################################################################
-
+    
     # instantiate a RobotState instance using the current robot model
     robot_model = ur5e.get_robot_model()
     robot_state = RobotState(robot_model)
@@ -96,30 +105,38 @@ def main():
 
     # plan to goal
     plan_and_execute(ur5e, ur_arm, logger, sleep_time=3.0)
-
+    """
     ###########################################################################
-    # Plan 3 - set goal state with PoseStamped message
+    # Plan 1 - set goal state with PoseStamped message
     ###########################################################################
-
+    # instantiate a RobotState instance using the current robot model
+    robot_model = ur5e.get_robot_model()
+    robot_state = RobotState(robot_model)
     # set plan start state to current state
+    
     ur_arm.set_start_state_to_current_state()
-
+    
+    time.sleep(10.0)
     # set pose goal with PoseStamped message
     from geometry_msgs.msg import PoseStamped
 
     pose_goal = PoseStamped()
     pose_goal.header.frame_id = "ur5e_base_link"
-    pose_goal.pose.orientation.w = 1.0
-    pose_goal.pose.position.x = 0.3
-    pose_goal.pose.position.y = 0.0
-    pose_goal.pose.position.z = 0.3
+    pose_goal.pose.orientation.w = 0.7071  # cos(45°)
+    pose_goal.pose.orientation.x = 0.0  # sin(45°)
+    pose_goal.pose.orientation.y = -0.7071
+    pose_goal.pose.orientation.z = 0.0
+
+    pose_goal.pose.position.x = -0.2
+    pose_goal.pose.position.y = 0.2
+    pose_goal.pose.position.z = 0.8
     ur_arm.set_goal_state(pose_stamped_msg=pose_goal, pose_link="ur5e_tool0")
 
     # plan to goal
     plan_and_execute(ur5e, ur_arm, logger, sleep_time=3.0)
 
     ###########################################################################
-    # Plan 4 - set goal state with constraints
+    # Plan 2 - set goal state with constraints & joint angles
     ###########################################################################
 
     # set plan start state to current state
@@ -147,9 +164,9 @@ def main():
     plan_and_execute(ur5e, ur_arm, logger, sleep_time=3.0)
 
     ###########################################################################
-    # Plan 5 - Planning with Multiple Pipelines simultaneously
+    # Plan X - Planning with Multiple Pipelines simultaneously
     ###########################################################################
-
+    """
     # set plan start state to current state
     ur_arm.set_start_state_to_current_state()
 
@@ -169,6 +186,7 @@ def main():
         multi_plan_parameters=multi_pipeline_plan_request_params,
         sleep_time=3.0,
     )
+    """
 
 
 if __name__ == "__main__":
