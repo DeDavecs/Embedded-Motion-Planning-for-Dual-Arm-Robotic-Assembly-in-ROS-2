@@ -110,13 +110,15 @@ def main():
     # Plan 1 - set goal state with PoseStamped message
     ###########################################################################
     # instantiate a RobotState instance using the current robot model
+    time.sleep(10.0)
+    
     robot_model = ur5e.get_robot_model()
     robot_state = RobotState(robot_model)
     # set plan start state to current state
     
     ur_arm.set_start_state_to_current_state()
     
-    time.sleep(10.0)
+    time.sleep(2.0)
     # set pose goal with PoseStamped message
     from geometry_msgs.msg import PoseStamped
 
