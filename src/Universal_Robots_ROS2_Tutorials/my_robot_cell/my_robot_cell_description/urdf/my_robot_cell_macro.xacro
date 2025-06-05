@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find ur_description)/urdf/ur_macro.xacro"/>
+  <xacro:include filename="$(find my_robot_cell_description)/urdf/safety_wall.xacro"/>
+  <xacro:include filename="$(find my_robot_cell_description)/urdf/table.xacro"/>
+  <xacro:include filename="$(find my_robot_cell_description)/urdf/box.xacro"/>
+  <xacro:include filename="$(find my_robot_cell_description)/urdf/2fg7_gripper/urdf/onrobot_2fg7_gripper.urdf.xacro"/>
+  <xacro:macro name="my_robot_cell" params="
+    parent
+    *origin
+    ur_type
+    joint_limits_parameters_file
+    kinematics_parameters_file
+    physical_parameters_file
+    visual_parameters_file
+    ">
+
+  
+    
+    <xacro:table parent="${parent}">
+      <origin rpy="0 0 0" xyz="0 -0 0.9"/>
+    </xacro:table>
+
+
+
+
+  
+    <xacro:safety_wall parent="${parent}">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </xacro:safety_wall>
+    
+    
+    
+    <link name="robot_mount"/>
+    <joint name="base_to_robot_mount" type="fixed">
+      <parent link="robot_base_plate"/>
+      <child link="robot_mount"/>
+      <origin xyz="0 0 0" rpy="0 0 ${pi}" />
+    </joint>
+
+    <!--This will create the specific robot-->
+    <xacro:ur_robot
+      name="${ur_type}"
+      tf_prefix="${ur_type}_"
+      parent="robot_mount"
+      joint_limits_parameters_file="${joint_limits_parameters_file}"
+      kinematics_parameters_file="${kinematics_parameters_file}"
+      physical_parameters_file="${physical_parameters_file}"
+      visual_parameters_file="${visual_parameters_file}"
+    >
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:ur_robot>
+
+    <xacro:box parent="ur5e_tool0">
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    </xacro:box>
+
+    <!--xacro:onrobot_2fg7_gripper prefix= "onrobot_2fg7_gripper" parent="ur5e_tool0">
+      <origin yxz="0 0 0" rpy="0 4.71239 0"/>
+    </xacro:onrobot_2fg7_gripper-->
+
+
+
+  </xacro:macro>
+
+</robot>
