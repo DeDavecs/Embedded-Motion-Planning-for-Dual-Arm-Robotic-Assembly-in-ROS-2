@@ -13,7 +13,7 @@ class MotionPlannerNode(Node):
         super().__init__("motion_planner_node")
         self.get_logger().info("Starting MoveItPy...")
         self.ur5e = MoveItPy(node_name="moveit_py")
-        self.ur_arm = self.ur5e.get_planning_component("ur_arm")
+        self.ur_arm = self.ur5e.get_planning_component("ur5e_409")
 
         # Subscribe to pose goals
         self.create_subscription(PoseStamped, "pose_goal", self.pose_goal_callback, 10)
@@ -32,7 +32,7 @@ class MotionPlannerNode(Node):
     def pose_goal_callback(self, msg):
         self.get_logger().info(f"Received new pose goal: {msg}")
         self.ur_arm.set_start_state_to_current_state()
-        self.ur_arm.set_goal_state(pose_stamped_msg=msg, pose_link="ur5e_tool0")
+        self.ur_arm.set_goal_state(pose_stamped_msg=msg, pose_link="ur5e_409_tool0")
 
         # Plan and execute using both planners as before
         plan_params = MultiPipelinePlanRequestParameters(self.ur5e, ["ompl_rrtc", "pilz_lin"])

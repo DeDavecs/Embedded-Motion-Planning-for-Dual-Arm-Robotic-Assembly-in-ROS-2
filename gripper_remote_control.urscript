@@ -1,0 +1,11 @@
+# Define the gripper function
+def twofg_grip(width, speed, force, blocking):
+    # Replace these lines with your real gripper URScript code
+    textmsg("twofg_grip called: ", width, speed, force, blocking)
+    # Example: send IOs, modbus, or URCap API calls here
+end
+
+# Main keep-alive loop
+while (True):
+    sync()
+end
