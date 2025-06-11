@@ -26,11 +26,10 @@ Bimanual robot motion planning using ros2-jazzy in moveit. The goal is the assem
   source $COLCON_WS/install/setup.bash
   ```
 ## Installing this repository:
-* Clone the repository:
+* Clone the repository int the src of your colcon workspace:
   ```
   git clone: https://github.com/DeDavecs/UR5e_Assembly_of_Wooden_Pieces.git
   ```
-  
 * Build the workspace. Within you workspace bash:
   ```
   colcon build
@@ -43,24 +42,21 @@ Bimanual robot motion planning using ros2-jazzy in moveit. The goal is the assem
   source install/setup.bash
   ```
   
-* Start the graphical interface and launch MoveIt with:
+* Start the graphical interface RViz and launch MoveIt with:
   ```
   ros2 launch my_robot_cell_control combined_simulation.launch.py 
   ```
   
-
-## Test workspace by running the demo script:
-* Don't forget to source your workspace!
-```
-   ros2 launch ur_simulation_gz ur_sim_moveit.launch.py ur_type:=ur5e
-```
-Note, you can add/change the following arguments, depending on the ip adress or if your connected to real hardware:
-  ```
-  robot_ip_XY:=<my ip address XY>
-  ```
+  Note, you can add/change the following arguments, depending on the ip adress or if your connected to real hardware:
+    ```
+     robot_ip_XY:=<my ip address XY>
+    ```
   ```
   use_mock_hardware:= false
   ```
 default: "true"
 
-* Now, you can launch the demo script or your own Python_API built motion plan.
+* Now, you can launch the demo script or your own Python_API built motion plan. For instance, launch:
+  ```
+  python3 INSERT NAME
+  ```
