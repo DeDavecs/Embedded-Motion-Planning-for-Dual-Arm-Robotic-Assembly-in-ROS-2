@@ -2,9 +2,8 @@
 This package contains tutorials around the ROS 2 packages for Universal Robots.
 
 ## Getting started
-To use the tutorials from this repository, please make sure to [install ROS
-2](https://docs.ros.org/en/rolling/Installation.html) on your system. Currently, only ROS Jazzy and
-Rolling are supported.
+To use this repository, please make sure to [install ROS
+2](https://docs.ros.org/en/jazzy/Installation.html) on your system. Currently, only ROS Jazzy is supported.
 
 With that, please create a workspace, clone this repo into the workspace, install the dependencies
 and build the workspace.
