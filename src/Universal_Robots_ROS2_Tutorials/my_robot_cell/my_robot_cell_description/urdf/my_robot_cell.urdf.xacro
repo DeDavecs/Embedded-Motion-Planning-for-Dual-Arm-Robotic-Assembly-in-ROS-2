@@ -2,6 +2,8 @@
 <robot name="my_robot_cell" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <xacro:include filename="$(find my_robot_cell_description)/urdf/my_robot_cell_macro.xacro"/>
+  <xacro:include filename="$(find my_robot_cell_description)/urdf/table.xacro"/>
+  <xacro:include filename="$(find my_robot_cell_description)/urdf/safety_wall.xacro"/>
 
   <xacro:arg name="ur_type" default="ur5e"/>
   <xacro:arg name="joint_limits_parameters_file" default="$(find ur_description)/config/$(arg ur_type)/joint_limits.yaml"/>
@@ -11,6 +13,16 @@
 
   <link name="world"/>
   <!--This will create the scene where the robot is located in-->
+  
+  <xacro:table parent="world">
+    <origin rpy="0 0 0" xyz="0 -0 0.9"/>
+  </xacro:table>
+  
+  <xacro:safety_wall parent="world">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </xacro:safety_wall>
+  
+  
   <xacro:my_robot_cell
     parent="world"
     ur_type="$(arg ur_type)"

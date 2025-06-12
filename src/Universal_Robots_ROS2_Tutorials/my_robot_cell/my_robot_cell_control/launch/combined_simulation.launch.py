@@ -101,7 +101,7 @@ def generate_launch_description():
                 launch_arguments={
                     "ur_type": ur_type,
                     "robot_ip": robot_ip,
-                    "tf_prefix": [LaunchConfiguration("ur_type"), "_409_"],
+                    "tf_prefix": [LaunchConfiguration("ur_type"), "_"],
                     "rviz_config_file": PathJoinSubstitution(
                         [
                             FindPackageShare("my_robot_cell_description"),
@@ -117,8 +117,6 @@ def generate_launch_description():
                         ]
                     ),
                     "use_mock_hardware": use_mock_hardware,
-                    "initial_joint_controller": "scaled_joint_trajectory_controller",
-                    "activate_joint_controller": "true",
                 }.items(),
             ),
             # Launch MoveGroup

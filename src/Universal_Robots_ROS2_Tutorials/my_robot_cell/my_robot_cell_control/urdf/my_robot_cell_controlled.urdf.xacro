@@ -5,6 +5,8 @@
   <xacro:include filename="$(find my_robot_cell_description)/urdf/my_robot_cell_macro.xacro"/>
   <!--The driver already provides a control tag for the UR arm, we can directly include-->
   <xacro:include filename="$(find ur_robot_driver)/urdf/ur.ros2_control.xacro"/>
+  <xacro:include filename="$(find my_robot_cell_description)/urdf/table.xacro"/>
+  <xacro:include filename="$(find my_robot_cell_description)/urdf/safety_wall.xacro"/>
 
   <!--We need to specify the arguments used for parametrizing our description-->
   <xacro:arg name="ur_type" default="ur5e"/>
@@ -23,6 +25,15 @@
 
   <link name="world" />
 
+
+  <xacro:table parent="world">
+    <origin rpy="0 0 0" xyz="0 -0 0.9"/>
+  </xacro:table>
+  
+  <xacro:safety_wall parent="world">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </xacro:safety_wall>
+  
   <!--Create the scene description including the robot-->
   <xacro:my_robot_cell
     parent="world"
@@ -38,7 +49,7 @@
   <!--Create the control tag for the UR robot-->
   <xacro:ur_ros2_control
     name="$(arg ur_type)"
-    tf_prefix="ur5e_409_"
+    tf_prefix="$(arg ur_type)_"
     kinematics_parameters_file="$(arg kinematics_parameters_file)"
     robot_ip="$(arg robot_ip)"
     script_filename="$(arg ur_script_filename)"

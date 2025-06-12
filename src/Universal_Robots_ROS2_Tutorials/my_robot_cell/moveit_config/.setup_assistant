@@ -5,18 +5,16 @@ moveit_setup_assistant_config:
   srdf:
     relative_path: config/my_robot_cell.srdf
   package_settings:
-    author_name: David Streib
+    author_name: dstreib
     author_email: dstreib@ethz.ch
-    generated_timestamp: 1749463683
+    generated_timestamp: 1744452338
   control_xacro:
     command:
       - position
       - velocity
-      - effort
     state:
       - position
       - velocity
-      - effort
   modified_urdf:
     xacros:
       - control_xacro
@@ -24,8 +22,6 @@ moveit_setup_assistant_config:
     command:
       - position
       - velocity
-      - effort
     state:
       - position
       - velocity
-      - effort
