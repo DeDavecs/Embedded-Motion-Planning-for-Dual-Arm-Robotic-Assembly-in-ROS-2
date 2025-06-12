@@ -4,13 +4,13 @@
     
     
     
-    <joint name="box_joint" type="fixed">
-      <parent link="ur5e_tool0" />
-      <child link="box" />
+    <joint name="${prefix}box_joint" type="fixed">
+      <parent link="${prefix}ur5e_tool0" />
+      <child link="${prefix}box" />
       <origin rpy="0 0 0" xyz="0 0 0.16"/>
     </joint>
 
-    <link name="box">
+    <link name="${prefix}box">
       <visual>
         <geometry>
           <box size="0.1 0.1 0.16"/>

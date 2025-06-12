@@ -8,6 +8,7 @@
   <xacro:macro name="my_robot_cell" params="
     parent
     *origin
+    prefix
     ur_type
     joint_limits_parameters_file
     kinematics_parameters_file
@@ -16,21 +17,19 @@
     ">
 
   
-  
     
-    
-    <link name="robot_mount"/>
-    <joint name="base_to_robot_mount" type="fixed">
-      <parent link="robot_base_plate"/>
-      <child link="robot_mount"/>
+    <link name="${prefix}robot_mount"/>
+    <joint name="${prefix}base_to_robot_mount" type="fixed">
+      <parent link="${prefix}robot_base_plate"/>
+      <child link="${prefix}robot_mount"/>
       <origin xyz="0 0 0" rpy="0 0 ${pi}" />
     </joint>
 
     <!--This will create the specific robot-->
     <xacro:ur_robot
-      name="${ur_type}"
-      tf_prefix="${ur_type}_"
-      parent="robot_mount"
+      name="${prefix}${ur_type}"
+      tf_prefix="${prefix}${ur_type}_"
+      parent="${prefix}robot_mount"
       joint_limits_parameters_file="${joint_limits_parameters_file}"
       kinematics_parameters_file="${kinematics_parameters_file}"
       physical_parameters_file="${physical_parameters_file}"
@@ -39,7 +38,7 @@
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:ur_robot>
 
-    <xacro:box parent="ur5e_tool0">
+    <xacro:box parent="${prefix}ur5e_tool0">
       <origin xyz="0 0 0.1" rpy="0 0 0"/>
     </xacro:box>
 

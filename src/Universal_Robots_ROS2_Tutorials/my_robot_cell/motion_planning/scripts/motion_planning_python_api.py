@@ -13,7 +13,7 @@ class MotionPlannerNode(Node):
         super().__init__("motion_planner_node")
         self.get_logger().info("Starting MoveItPy...")
         self.ur5e = MoveItPy(node_name="moveit_py")
-        self.ur_arm = self.ur5e.get_planning_component("ur_arm")
+        self.ur_arm = self.ur5e.get_planning_component("409_ur5e")
 
         # Subscribe to pose goals
         self.create_subscription(PoseStamped, "pose_goal", self.pose_goal_callback, 10)

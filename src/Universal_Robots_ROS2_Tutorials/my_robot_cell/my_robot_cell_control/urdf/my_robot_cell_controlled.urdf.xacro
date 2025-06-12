@@ -36,6 +36,7 @@
   
   <!--Create the scene description including the robot-->
   <xacro:my_robot_cell
+    prefix="409_"
     parent="world"
     ur_type="$(arg ur_type)"
     joint_limits_parameters_file="$(arg joint_limit_parameters_file)"
@@ -49,7 +50,7 @@
   <!--Create the control tag for the UR robot-->
   <xacro:ur_ros2_control
     name="$(arg ur_type)"
-    tf_prefix="$(arg ur_type)_"
+    tf_prefix="409_$(arg ur_type)_"
     kinematics_parameters_file="$(arg kinematics_parameters_file)"
     robot_ip="$(arg robot_ip)"
     script_filename="$(arg ur_script_filename)"

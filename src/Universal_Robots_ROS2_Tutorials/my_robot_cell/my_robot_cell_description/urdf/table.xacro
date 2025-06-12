@@ -5,7 +5,7 @@
     
     
     <joint name="table_base_joint" type="fixed">
-      <parent link="${parent}" />
+      <parent link="world" />
       <child link="table" />
       <origin rpy="0 0 0" xyz="0 0 0.9"/>
     </joint>
@@ -36,13 +36,13 @@
     </link>
 
 
-    <joint name="robot_base_plate_joint" type="fixed">
+    <joint name="409_robot_base_plate_joint" type="fixed">
       <parent link="table" />
-      <child link="robot_base_plate"/>
+      <child link="409_robot_base_plate"/>
       <origin rpy="0 0 0" xyz="-0.52 0.32 0.02"/>
     </joint>
 
-    <link name="robot_base_plate">
+    <link name="409_robot_base_plate">
       <visual>
         <geometry>
           <box size="0.16 0.16 0.02"/>
