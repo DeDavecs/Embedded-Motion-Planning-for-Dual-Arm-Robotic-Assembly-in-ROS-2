@@ -49,7 +49,7 @@
 
   <!--Create the control tag for the UR robot-->
   <xacro:ur_ros2_control
-    name="$(arg ur_type)"
+    name="409_ur5e"
     tf_prefix="409_$(arg ur_type)_"
     kinematics_parameters_file="$(arg kinematics_parameters_file)"
     robot_ip="$(arg robot_ip)"
@@ -60,6 +60,40 @@
     mock_sensor_commands="$(arg mock_sensor_commands)"
     headless_mode="$(arg headless_mode)"
   />
+
+  <xacro:my_robot_cell
+    prefix="410_"
+    parent="world"
+    ur_type="$(arg ur_type)"
+    joint_limits_parameters_file="$(arg joint_limit_parameters_file)"
+    kinematics_parameters_file="$(arg kinematics_parameters_file)"
+    physical_parameters_file="$(arg physical_parameters_file)"
+    visual_parameters_file="$(arg visual_parameters_file)"
+>
+    <!-- Change position so it's not overlapping with first robot -->
+    <origin xyz="0 0 1" rpy="0 0 0" />  
+</xacro:my_robot_cell>
+
+  <xacro:ur_ros2_control
+    name="410_ur5e"
+    tf_prefix="410_$(arg ur_type)_"
+    kinematics_parameters_file="$(arg kinematics_parameters_file)"
+    robot_ip="192.168.1.103"   
+    script_filename="$(arg ur_script_filename)"
+    output_recipe_filename="$(arg ur_output_recipe_filename)"
+    input_recipe_filename="$(arg ur_input_recipe_filename)"
+    use_mock_hardware="$(arg use_mock_hardware)"
+    mock_sensor_commands="$(arg mock_sensor_commands)"
+    headless_mode="$(arg headless_mode)"
+  />
+
+
+
+
+
+
+
+
 
   <!--If you had more controlled devices in your description, e.g. a gripper, you can add another ros2_control tag here-->
 

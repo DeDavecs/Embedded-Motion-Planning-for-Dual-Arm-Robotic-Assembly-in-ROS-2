@@ -7,7 +7,7 @@ moveit_setup_assistant_config:
   package_settings:
     author_name: David Streib
     author_email: dstreib@ethz.ch
-    generated_timestamp: 1749731578
+    generated_timestamp: 1749752837
   control_xacro:
     command:
       - position
