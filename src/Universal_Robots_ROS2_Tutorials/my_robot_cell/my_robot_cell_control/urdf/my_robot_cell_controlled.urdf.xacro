@@ -15,7 +15,8 @@
   <xacro:arg name="physical_parameters_file" default="$(find ur_description)/config/$(arg ur_type)/physical_parameters.yaml"/>
   <xacro:arg name="visual_parameters_file" default="$(find ur_description)/config/$(arg ur_type)/visual_parameters.yaml"/>
 
-  <xacro:arg name="robot_ip" default="0.0.0.0"/>
+  <xacro:arg name="robot_409_ip" default="192.168.1.100"/>
+  <xacro:arg name="robot_410_ip" default="192.168.1.103"/>
   <xacro:arg name="headless_mode" default="false" />
   <xacro:arg name="ur_script_filename" default="$(find ur_client_library)/resources/external_control.urscript"/>
   <xacro:arg name="ur_output_recipe_filename" default="$(find ur_robot_driver)/resources/rtde_output_recipe.txt"/>
@@ -52,13 +53,17 @@
     name="409_ur5e"
     tf_prefix="409_$(arg ur_type)_"
     kinematics_parameters_file="$(arg kinematics_parameters_file)"
-    robot_ip="$(arg robot_ip)"
+    robot_ip="$(arg robot_409_ip)"
     script_filename="$(arg ur_script_filename)"
     output_recipe_filename="$(arg ur_output_recipe_filename)"
     input_recipe_filename="$(arg ur_input_recipe_filename)"
     use_mock_hardware="$(arg use_mock_hardware)"
     mock_sensor_commands="$(arg mock_sensor_commands)"
     headless_mode="$(arg headless_mode)"
+    reverse_port="50001"
+    script_sender_port="50002"
+    script_command_port="50004"
+    trajectory_port="50003"
   />
 
   <xacro:my_robot_cell
@@ -78,13 +83,17 @@
     name="410_ur5e"
     tf_prefix="410_$(arg ur_type)_"
     kinematics_parameters_file="$(arg kinematics_parameters_file)"
-    robot_ip="192.168.1.103"   
+    robot_ip="$(arg robot_410_ip)"   
     script_filename="$(arg ur_script_filename)"
     output_recipe_filename="$(arg ur_output_recipe_filename)"
     input_recipe_filename="$(arg ur_input_recipe_filename)"
     use_mock_hardware="$(arg use_mock_hardware)"
     mock_sensor_commands="$(arg mock_sensor_commands)"
     headless_mode="$(arg headless_mode)"
+    reverse_port="50011"
+    script_sender_port="50012"
+    script_command_port="50014"
+    trajectory_port="50013"
   />
 
 
