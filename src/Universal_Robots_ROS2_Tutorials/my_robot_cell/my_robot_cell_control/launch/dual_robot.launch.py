@@ -67,29 +67,34 @@ def generate_launch_description():
         )
     )
 
-    # Robot State Publisher (for the combined URDF)
+    # Robot State Publisher
+    robot_description_content = Command(
+        [
+            PathJoinSubstitution([FindExecutable(name="xacro")]),
+            " ",
+            PathJoinSubstitution([
+                FindPackageShare("my_robot_cell_control"),
+                "urdf",
+                "my_robot_cell_controlled.urdf.xacro"
+            ]),
+            " ",
+            "ur_type:=", ur_type,
+            " ",
+            "robot_409_ip:=", robot_409_ip,
+            " ",
+            "robot_410_ip:=", robot_410_ip,
+            " ",
+            "use_mock_hardware:=", use_mock_hardware,
+        ]
+    )
+
+    robot_description = {"robot_description": robot_description_content}
+
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
-        output="screen",
-        parameters=[
-            {
-                "robot_description": Command(
-                    [
-                        FindExecutable(name="xacro"),
-                        " ",
-                        PathJoinSubstitution([
-                            FindPackageShare("my_robot_cell_control"),
-                            "urdf",
-                            "my_robot_cell_controlled.urdf.xacro"
-                        ]),
-                        " robot_409_ip:=", robot_409_ip,
-                        " robot_410_ip:=", robot_410_ip,
-                        " use_mock_hardware:=", use_mock_hardware,
-                    ]
-                )
-            }
-        ],
+        output="both",
+        parameters=[robot_description],
     )
 
     # ROS2 Control Node (handles both robots from the combined URDF)
@@ -97,11 +102,7 @@ def generate_launch_description():
         package="controller_manager",
         executable="ros2_control_node",
         parameters=[
-            PathJoinSubstitution([
-                FindPackageShare("ur_robot_driver"),
-                "config",
-                "ur5e_update_rate.yaml"
-            ]),
+            robot_description,
             PathJoinSubstitution([
                 FindPackageShare("my_robot_cell_control"),
                 "config",
@@ -111,7 +112,7 @@ def generate_launch_description():
         output="screen",
     )
 
-    # Dashboard clients for both robots
+    # Dashboard client for robot 409 only (to avoid conflicts)
     dashboard_client_409 = Node(
         package="ur_robot_driver",
         executable="dashboard_client",
@@ -119,92 +120,10 @@ def generate_launch_description():
         output="screen",
         condition=UnlessCondition(use_mock_hardware),
         parameters=[{"robot_ip": robot_409_ip}],
-        remappings=[
-            ("dashboard_client", "409_dashboard_client"),
-        ],
     )
 
-    dashboard_client_410 = Node(
-        package="ur_robot_driver",
-        executable="dashboard_client",
-        name="dashboard_client_410",
-        output="screen",
-        condition=UnlessCondition(use_mock_hardware),
-        parameters=[{"robot_ip": robot_410_ip}],
-        remappings=[
-            ("dashboard_client", "410_dashboard_client"),
-        ],
-    )
-
-    # Robot state helpers for both robots
-    robot_state_helper_409 = Node(
-        package="ur_robot_driver",
-        executable="robot_state_helper",
-        name="ur_robot_state_helper_409",
-        output="screen",
-        condition=UnlessCondition(use_mock_hardware),
-        parameters=[
-            {"robot_ip": robot_409_ip},
-            {"headless_mode": False},
-        ],
-    )
-
-    robot_state_helper_410 = Node(
-        package="ur_robot_driver",
-        executable="robot_state_helper",
-        name="ur_robot_state_helper_410",
-        output="screen",
-        condition=UnlessCondition(use_mock_hardware),
-        parameters=[
-            {"robot_ip": robot_410_ip},
-            {"headless_mode": False},
-        ],
-    )
-
-    # URScript interfaces for both robots
-    urscript_interface_409 = Node(
-        package="ur_robot_driver",
-        executable="urscript_interface",
-        name="urscript_interface_409",
-        parameters=[{"robot_ip": robot_409_ip}],
-        output="screen",
-        condition=UnlessCondition(use_mock_hardware),
-    )
-
-    urscript_interface_410 = Node(
-        package="ur_robot_driver",
-        executable="urscript_interface", 
-        name="urscript_interface_410",
-        parameters=[{"robot_ip": robot_410_ip}],
-        output="screen",
-        condition=UnlessCondition(use_mock_hardware),
-    )
-
-    # Controller stoppers for both robots
-    controller_stopper_409 = Node(
-        package="ur_robot_driver",
-        executable="controller_stopper_node",
-        name="controller_stopper_409",
-        output="screen",
-        condition=UnlessCondition(use_mock_hardware),
-        parameters=[
-            {"headless_mode": False},
-            {"joint_controller_active": True},
-            {
-                "consistent_controllers": [
-                    "io_and_status_controller",
-                    "force_torque_sensor_broadcaster", 
-                    "joint_state_broadcaster",
-                    "speed_scaling_state_broadcaster",
-                    "tcp_pose_broadcaster",
-                    "ur_configuration_controller",
-                ]
-            },
-        ],
-    )
-
-    # Spawn controllers
-    controller_spawner = Node(
+    # Spawn controllers for robot 409
+    controller_spawner_409 = Node(
         package="controller_manager",
         executable="spawner",
         arguments=[
@@ -214,54 +133,68 @@ def generate_launch_description():
             "io_and_status_controller", 
             "speed_scaling_state_broadcaster",
             "force_torque_sensor_broadcaster",
-            "tcp_pose_broadcaster",
-            "ur_configuration_controller",
             "scaled_joint_trajectory_controller",
         ],
     )
 
-    # Get MoveIt configuration
+    # Spawn controllers for robot 410 (simplified - only the trajectory controller for now)
+    controller_spawner_410 = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=[
+            "--controller-manager", "/controller_manager",
+            "--controller-manager-timeout", "15",
+            "robot_410_scaled_joint_trajectory_controller",
+        ],
+    )
+
+    # MoveIt Configuration
     moveit_config = (
         MoveItConfigsBuilder("my_robot_cell", package_name="moveit_config")
+        .robot_description(file_path="config/my_robot_cell.urdf.xacro")
         .to_moveit_configs()
     )
 
-    # Launch MoveGroup
-    move_group_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
-            PathJoinSubstitution([
-                FindPackageShare("moveit_config"),
-                "launch",
-                "move_group.launch.py",
-            ])
-        ]),
+    # MoveGroup Node
+    move_group_node = Node(
+        package="moveit_ros_move_group",
+        executable="move_group",
+        output="screen",
+        parameters=[moveit_config.to_dict()],
     )
 
-    # Launch MoveIt RViz
-    moveit_rviz_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
-            PathJoinSubstitution([
-                FindPackageShare("moveit_config"),
-                "launch", 
-                "moveit_rviz.launch.py",
-            ])
-        ]),
+    # MoveIt RViz
+    rviz_config_file = PathJoinSubstitution([
+        FindPackageShare("moveit_config"),
+        "config",
+        "moveit.rviz"
+    ])
+
+    rviz_node = Node(
+        package="rviz2",
+        executable="rviz2",
+        name="rviz2_moveit",
+        output="log",
+        arguments=["-d", rviz_config_file],
+        parameters=[
+            moveit_config.robot_description,
+            moveit_config.robot_description_semantic,
+            moveit_config.robot_description_kinematics,
+            moveit_config.planning_pipelines,
+            moveit_config.joint_limits,
+        ],
     )
 
+    # Create the launch description
     return LaunchDescription(
         declared_arguments
         + [
             robot_state_publisher_node,
             control_node,
             dashboard_client_409,
-            dashboard_client_410,
-            robot_state_helper_409,
-            robot_state_helper_410,
-            urscript_interface_409,
-            urscript_interface_410,
-            controller_stopper_409,
-            controller_spawner,
-            move_group_launch,
-            moveit_rviz_launch,
+            controller_spawner_409,
+            controller_spawner_410,
+            move_group_node,
+            rviz_node,
         ]
     ) 

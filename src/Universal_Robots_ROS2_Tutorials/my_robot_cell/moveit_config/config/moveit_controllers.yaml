@@ -5,6 +5,7 @@ moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControll
 moveit_simple_controller_manager:
   controller_names:
     - scaled_joint_trajectory_controller
+    - robot_410_scaled_joint_trajectory_controller
 
   scaled_joint_trajectory_controller:
     type: FollowJointTrajectory
@@ -17,3 +18,15 @@ moveit_simple_controller_manager:
       - 409_ur5e_wrist_3_joint
     action_ns: follow_joint_trajectory
     default: true
+
+  robot_410_scaled_joint_trajectory_controller:
+    type: FollowJointTrajectory
+    joints:
+      - 410_ur5e_shoulder_pan_joint
+      - 410_ur5e_shoulder_lift_joint
+      - 410_ur5e_elbow_joint
+      - 410_ur5e_wrist_1_joint
+      - 410_ur5e_wrist_2_joint
+      - 410_ur5e_wrist_3_joint
+    action_ns: follow_joint_trajectory
+    default: false

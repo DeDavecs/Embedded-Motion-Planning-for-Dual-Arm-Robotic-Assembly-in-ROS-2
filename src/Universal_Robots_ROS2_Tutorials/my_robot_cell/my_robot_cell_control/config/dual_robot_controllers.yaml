@@ -1,5 +1,8 @@
 controller_manager:
   ros__parameters:
+    update_rate: 500  # Hz
+
+    # Common controllers (shared)
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
@@ -12,6 +15,7 @@ controller_manager:
     force_torque_sensor_broadcaster:
       type: force_torque_sensor_broadcaster/ForceTorqueSensorBroadcaster
 
+    # Robot 409 controllers
     joint_trajectory_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
@@ -24,82 +28,12 @@ controller_manager:
     forward_position_controller:
       type: position_controllers/JointGroupPositionController
 
-    force_mode_controller:
-      type: ur_controllers/ForceModeController
-
-    freedrive_mode_controller:
-      type: ur_controllers/FreedriveModeController
-
-    passthrough_trajectory_controller:
-      type: ur_controllers/PassthroughTrajectoryController
-
-    tcp_pose_broadcaster:
-      type: pose_broadcaster/PoseBroadcaster
-
-    ur_configuration_controller:
-      type: ur_controllers/URConfigurationController
-
-    tool_contact_controller:
-      type: ur_controllers/ToolContactController
-
-    # Controllers for robot 410
-    410_joint_trajectory_controller:
-      type: joint_trajectory_controller/JointTrajectoryController
-
-    410_scaled_joint_trajectory_controller:
+    # Robot 410 specific controllers
+    robot_410_scaled_joint_trajectory_controller:
       type: ur_controllers/ScaledJointTrajectoryController
 
-    410_forward_velocity_controller:
-      type: velocity_controllers/JointGroupVelocityController
-
-    410_forward_position_controller:
-      type: position_controllers/JointGroupPositionController
-
-    410_force_mode_controller:
-      type: ur_controllers/ForceModeController
-
-    410_freedrive_mode_controller:
-      type: ur_controllers/FreedriveModeController
-
-    410_passthrough_trajectory_controller:
-      type: ur_controllers/PassthroughTrajectoryController
-
-    410_tcp_pose_broadcaster:
-      type: pose_broadcaster/PoseBroadcaster
-
-    410_tool_contact_controller:
-      type: ur_controllers/ToolContactController
-
-    enforce_command_limits: false
-
-# Robot 409 Controllers
-speed_scaling_state_broadcaster:
-  ros__parameters:
-    state_publish_rate: 100.0
-    tf_prefix: "409_ur5e_"
-
-io_and_status_controller:
-  ros__parameters:
-    tf_prefix: "409_ur5e_"
-
-ur_configuration_controller:
-  ros__parameters:
-    tf_prefix: "409_ur5e_"
-
-force_torque_sensor_broadcaster:
-  ros__parameters:
-    sensor_name: 409_ur5e_tcp_fts_sensor
-    state_interface_names:
-      - force.x
-      - force.y
-      - force.z
-      - torque.x
-      - torque.y
-      - torque.z
-    frame_id: 409_ur5e_tool0
-    topic_name: ft_data_409
-
-joint_trajectory_controller:
+# Robot 409 Controller Parameters (default controllers)
+joint_state_broadcaster:
   ros__parameters:
     joints:
       - 409_ur5e_shoulder_pan_joint
@@ -108,23 +42,36 @@ joint_trajectory_controller:
       - 409_ur5e_wrist_1_joint
       - 409_ur5e_wrist_2_joint
       - 409_ur5e_wrist_3_joint
-    command_interfaces:
-      - position
-    state_interfaces:
+      - 410_ur5e_shoulder_pan_joint
+      - 410_ur5e_shoulder_lift_joint
+      - 410_ur5e_elbow_joint
+      - 410_ur5e_wrist_1_joint
+      - 410_ur5e_wrist_2_joint
+      - 410_ur5e_wrist_3_joint
+    interfaces:
       - position
       - velocity
-    state_publish_rate: 100.0
-    action_monitor_rate: 20.0
-    allow_partial_joints_goal: false
-    constraints:
-      stopped_velocity_tolerance: 0.2
-      goal_time: 0.0
-      409_ur5e_shoulder_pan_joint: { trajectory: 0.2, goal: 0.1 }
-      409_ur5e_shoulder_lift_joint: { trajectory: 0.2, goal: 0.1 }
-      409_ur5e_elbow_joint: { trajectory: 0.2, goal: 0.1 }
-      409_ur5e_wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
-      409_ur5e_wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
-      409_ur5e_wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
+
+io_and_status_controller:
+  ros__parameters:
+    tf_prefix: "409_ur5e_"
+    robot_status_pub_rate: 10.0
+
+speed_scaling_state_broadcaster:
+  ros__parameters:
+    tf_prefix: "409_ur5e_"
+
+force_torque_sensor_broadcaster:
+  ros__parameters:
+    sensor_name: 409_ur5e_tcp_fts_sensor
+    state_interface_names:
+      - 409_ur5e_tcp_fts_sensor/force.x
+      - 409_ur5e_tcp_fts_sensor/force.y
+      - 409_ur5e_tcp_fts_sensor/force.z
+      - 409_ur5e_tcp_fts_sensor/torque.x
+      - 409_ur5e_tcp_fts_sensor/torque.y
+      - 409_ur5e_tcp_fts_sensor/torque.z
+    frame_id: 409_ur5e_tool0
 
 scaled_joint_trajectory_controller:
   ros__parameters:
@@ -154,15 +101,8 @@ scaled_joint_trajectory_controller:
       409_ur5e_wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
     speed_scaling_interface_name: 409_ur5e_speed_scaling/speed_scaling_factor
 
-tcp_pose_broadcaster:
-  ros__parameters:
-    frame_id: 409_ur5e_base
-    pose_name: 409_ur5e_tcp_pose
-    tf:
-      child_frame_id: 409_ur5e_tool0_controller
-
-# Robot 410 Controllers
-410_joint_trajectory_controller:
+# Robot 410 Controller Parameters
+robot_410_scaled_joint_trajectory_controller:
   ros__parameters:
     joints:
       - 410_ur5e_shoulder_pan_joint
@@ -188,38 +128,4 @@ tcp_pose_broadcaster:
       410_ur5e_wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
       410_ur5e_wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
       410_ur5e_wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
-
-410_scaled_joint_trajectory_controller:
-  ros__parameters:
-    joints:
-      - 410_ur5e_shoulder_pan_joint
-      - 410_ur5e_shoulder_lift_joint
-      - 410_ur5e_elbow_joint
-      - 410_ur5e_wrist_1_joint
-      - 410_ur5e_wrist_2_joint
-      - 410_ur5e_wrist_3_joint
-    command_interfaces:
-      - position
-    state_interfaces:
-      - position
-      - velocity
-    state_publish_rate: 100.0
-    action_monitor_rate: 20.0
-    allow_partial_joints_goal: false
-    constraints:
-      stopped_velocity_tolerance: 0.2
-      goal_time: 0.0
-      410_ur5e_shoulder_pan_joint: { trajectory: 0.2, goal: 0.1 }
-      410_ur5e_shoulder_lift_joint: { trajectory: 0.2, goal: 0.1 }
-      410_ur5e_elbow_joint: { trajectory: 0.2, goal: 0.1 }
-      410_ur5e_wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
-      410_ur5e_wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
-      410_ur5e_wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
-    speed_scaling_interface_name: 410_ur5e_speed_scaling/speed_scaling_factor
-
-410_tcp_pose_broadcaster:
-  ros__parameters:
-    frame_id: 410_ur5e_base
-    pose_name: 410_ur5e_tcp_pose
-    tf:
-      child_frame_id: 410_ur5e_tool0_controller 
+    speed_scaling_interface_name: 410_ur5e_speed_scaling/speed_scaling_factor 

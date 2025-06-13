@@ -90,10 +90,10 @@
     use_mock_hardware="$(arg use_mock_hardware)"
     mock_sensor_commands="$(arg mock_sensor_commands)"
     headless_mode="$(arg headless_mode)"
-    reverse_port="50011"
-    script_sender_port="50012"
-    script_command_port="50014"
-    trajectory_port="50013"
+    reverse_port="50005"
+    script_sender_port="50006"
+    script_command_port="50008"
+    trajectory_port="50007"
   />
 
 
