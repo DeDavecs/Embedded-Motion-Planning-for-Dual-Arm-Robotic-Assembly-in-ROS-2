@@ -8,6 +8,7 @@ from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped
 from std_msgs.msg import String
 import time
+import threading
 
 class CoordinatedPickPlaceMaster(Node):
     def __init__(self):
@@ -28,17 +29,17 @@ class CoordinatedPickPlaceMaster(Node):
         # Define the coordinated sequence
         self.sequence_actions = [
             # Phase 1: Robot 410 approaches object
-            {"action": "move", "robot": "410", "pose": [0.3, -0.2, 0.25], "description": "410: Move to pre-pick position"},
-            {"action": "move", "robot": "410", "pose": [0.3, -0.2, 0.08], "description": "410: Move down to object"},
+            {"action": "move", "robot": "410", "pose": [-0.15, -0.1, 0.25], "description": "410: Move to pre-pick position"},
+            {"action": "move", "robot": "410", "pose": [-0.15, -0.1, 0.08], "description": "410: Move down to object"},
             {"action": "gripper", "robot": "410", "command": "close", "description": "410: GRIP OBJECT"},
-            {"action": "move", "robot": "410", "pose": [0.3, -0.2, 0.25], "description": "410: Lift object"},
+            
             
             # Phase 2: Robot 409 assists/inspects
-            {"action": "move", "robot": "409", "pose": [-0.2, 0.3, 0.25], "description": "409: Move to assist position"},
-            {"action": "move", "robot": "409", "pose": [-0.2, 0.3, 0.12], "description": "409: Move down to assist"},
+            {"action": "move", "robot": "409", "pose": [-0.05, -0.1, 0.25], "description": "409: Move to assist position"},
+            {"action": "move", "robot": "409", "pose": [-0.05, -0.1, 0.12], "description": "409: Move down to assist"},
             {"action": "gripper", "robot": "409", "command": "open", "description": "409: OPEN GRIPPER (ready to assist)"},
             {"action": "wait", "duration": 1.0, "description": "409: Inspect/assist action"},
-            {"action": "move", "robot": "409", "pose": [-0.2, 0.3, 0.25], "description": "409: Move back up"},
+            {"action": "move", "robot": "409", "pose": [-0.05, -0.1, 0.25], "description": "409: Move back up"},
             {"action": "move", "robot": "409", "pose": [0.0, 0.0, 0.35], "description": "409: Move to home position"},
             
             # Phase 3: Robot 410 places object
@@ -87,17 +88,12 @@ class CoordinatedPickPlaceMaster(Node):
         self.get_logger().info(f"🎯 MOTION {robot}: Moving to [{pose_coords[0]:.2f}, {pose_coords[1]:.2f}, {pose_coords[2]:.2f}]")
 
     def run_coordinated_sequence(self):
-        if self.executing:
-            return
-            
         if self.sequence_step >= len(self.sequence_actions):
             self.get_logger().info("🎉 COORDINATED SEQUENCE COMPLETED!")
-            self.destroy_node()
             return
             
         # Get current action
         action = self.sequence_actions[self.sequence_step]
-        self.executing = True
         
         # Log the action description
         self.get_logger().info(f"📋 Step {self.sequence_step + 1}/{len(self.sequence_actions)}: {action['description']}")
@@ -105,23 +101,15 @@ class CoordinatedPickPlaceMaster(Node):
         # Execute the action
         if action["action"] == "move":
             self.send_motion_command(action["robot"], action["pose"])
-            execution_time = 4.0  # Time for motion execution
             
         elif action["action"] == "gripper":
             self.send_gripper_command(action["robot"], action["command"])
-            execution_time = 1.5  # Time for gripper action
             
         elif action["action"] == "wait":
             self.get_logger().info(f"⏳ WAITING: {action['description']}")
-            execution_time = action["duration"]
             
-        # Schedule next step
+        # Move to next step
         self.sequence_step += 1
-        self.create_timer(execution_time, self.finish_execution)
-
-    def finish_execution(self):
-        """Mark current execution as finished"""
-        self.executing = False
 
 def main(args=None):
     rclpy.init(args=args)
