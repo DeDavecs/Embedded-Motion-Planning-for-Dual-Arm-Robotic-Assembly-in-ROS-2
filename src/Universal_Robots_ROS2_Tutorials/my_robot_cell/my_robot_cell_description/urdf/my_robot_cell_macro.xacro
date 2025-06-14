@@ -7,6 +7,7 @@
   <xacro:include filename="$(find my_robot_cell_description)/urdf/2fg7_gripper/urdf/onrobot_2fg7_gripper.urdf.xacro"/>
   <xacro:macro name="my_robot_cell" params="
     parent
+    rotation
     *origin
     prefix
     ur_type
@@ -35,7 +36,7 @@
       physical_parameters_file="${physical_parameters_file}"
       visual_parameters_file="${visual_parameters_file}"
     >
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="${rotation}" />
     </xacro:ur_robot>
 
     <xacro:box parent="${prefix}ur5e_tool0">

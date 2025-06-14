@@ -19,7 +19,8 @@ find_package(moveit_ros_move_group REQUIRED)
 # Install Python executables
 install(PROGRAMS
   scripts/motion_planning_python_api.py
-  DESTINATION share/${PROJECT_NAME}/scripts
+  scripts/pick_place_master.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 # Install config files

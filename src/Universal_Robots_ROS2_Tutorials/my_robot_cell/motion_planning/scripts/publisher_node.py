@@ -18,21 +18,21 @@ class PoseGoalPublisher(Node):
         if self.counter == 0:
             # First, send a goal to robot 409
             msg = PoseStamped()
-            msg.header.frame_id = "409_ur5e_base_link"
-            msg.pose.position.x = -0.2
-            msg.pose.position.y = 0.3
-            msg.pose.position.z = 0.8
-            msg.pose.orientation.x = 0.0
+            msg.header.frame_id = "table"
+            msg.pose.position.x = 0.0
+            msg.pose.position.y = 0.0
+            msg.pose.position.z = 0.5
+            msg.pose.orientation.x = 1.0
             msg.pose.orientation.y = 0.0
             msg.pose.orientation.z = 0.0
-            msg.pose.orientation.w = 1.0
+            msg.pose.orientation.w = 0.0
             self.publisher_409.publish(msg)
             self.get_logger().info("Published pose goal for robot 409!")
             
         elif self.counter == 1:
             # Then, send a goal to robot 410
             msg = PoseStamped()
-            msg.header.frame_id = "410_ur5e_base_link"
+            msg.header.frame_id = "table"
             msg.pose.position.x = 0.2
             msg.pose.position.y = -0.3
             msg.pose.position.z = 0.8
