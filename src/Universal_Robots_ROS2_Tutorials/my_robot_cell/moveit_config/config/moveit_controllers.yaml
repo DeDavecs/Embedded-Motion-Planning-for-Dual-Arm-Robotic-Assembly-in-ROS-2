@@ -2,6 +2,12 @@
 
 moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
 
+trajectory_execution:
+  allowed_execution_duration_scaling: 2.0
+  allowed_goal_duration_margin: 1.0
+  allowed_start_tolerance: 0.05
+  execution_duration_monitoring: false
+
 moveit_simple_controller_manager:
   controller_names:
     - scaled_joint_trajectory_controller
