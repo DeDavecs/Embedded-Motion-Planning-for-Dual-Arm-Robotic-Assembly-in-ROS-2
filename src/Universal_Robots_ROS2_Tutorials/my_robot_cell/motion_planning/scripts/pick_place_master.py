@@ -29,25 +29,25 @@ class CoordinatedPickPlaceMaster(Node):
         # Define the coordinated sequence
         self.sequence_actions = [
             # Phase 1: Robot 410 approaches object
-            {"action": "move", "robot": "410", "pose": [-0.15, -0.1, 0.25], "description": "410: Move to pre-pick position"},
-            {"action": "move", "robot": "410", "pose": [-0.15, -0.1, 0.08], "description": "410: Move down to object"},
+            {"action": "move", "robot": "410", "pose": [-0.20, -0.20, 0.30], "description": "410: Move to pre-pick position"},
+            {"action": "move", "robot": "410", "pose": [-0.20, -0.20, 0.22], "description": "410: Move down to object"},
             {"action": "gripper", "robot": "410", "command": "close", "description": "410: GRIP OBJECT"},
             
             
             # Phase 2: Robot 409 assists/inspects
-            {"action": "move", "robot": "409", "pose": [-0.05, -0.1, 0.25], "description": "409: Move to assist position"},
-            {"action": "move", "robot": "409", "pose": [-0.05, -0.1, 0.12], "description": "409: Move down to assist"},
-            {"action": "gripper", "robot": "409", "command": "open", "description": "409: OPEN GRIPPER (ready to assist)"},
-            {"action": "wait", "duration": 1.0, "description": "409: Inspect/assist action"},
-            {"action": "move", "robot": "409", "pose": [-0.05, -0.1, 0.25], "description": "409: Move back up"},
-            {"action": "move", "robot": "409", "pose": [0.0, 0.0, 0.35], "description": "409: Move to home position"},
+            #{"action": "move", "robot": "409", "pose": [-0.05, -0.1, 0.25], "description": "409: Move to assist position"},
+            #{"action": "move", "robot": "409", "pose": [-0.05, -0.1, 0.12], "description": "409: Move down to assist"},
+            #{"action": "gripper", "robot": "409", "command": "open", "description": "409: OPEN GRIPPER (ready to assist)"},
+            #{"action": "wait", "duration": 1.0, "description": "409: Inspect/assist action"},
+            #{"action": "move", "robot": "409", "pose": [-0.05, -0.1, 0.25], "description": "409: Move back up"},
+            #{"action": "move", "robot": "409", "pose": [0.0, 0.0, 0.35], "description": "409: Move to home position"},
             
             # Phase 3: Robot 410 places object
-            {"action": "move", "robot": "410", "pose": [-0.3, 0.1, 0.25], "description": "410: Move to pre-place position"},
-            {"action": "move", "robot": "410", "pose": [-0.3, 0.1, 0.08], "description": "410: Move down to place"},
-            {"action": "gripper", "robot": "410", "command": "open", "description": "410: RELEASE OBJECT"},
-            {"action": "move", "robot": "410", "pose": [-0.3, 0.1, 0.25], "description": "410: Move up from place"},
-            {"action": "move", "robot": "410", "pose": [0.0, 0.0, 0.35], "description": "410: Move to home position"},
+            #{"action": "move", "robot": "410", "pose": [-0.3, 0.1, 0.25], "description": "410: Move to pre-place position"},
+            #{"action": "move", "robot": "410", "pose": [-0.3, 0.1, 0.08], "description": "410: Move down to place"},
+            #{"action": "gripper", "robot": "410", "command": "open", "description": "410: RELEASE OBJECT"},
+            #{"action": "move", "robot": "410", "pose": [-0.3, 0.1, 0.25], "description": "410: Move up from place"},
+            #{"action": "move", "robot": "410", "pose": [0.0, 0.0, 0.35], "description": "410: Move to home position"},
         ]
 
     def make_pose(self, x, y, z, frame_id="table"):

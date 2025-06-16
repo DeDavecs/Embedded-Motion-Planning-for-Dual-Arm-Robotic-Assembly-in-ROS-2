@@ -3,6 +3,7 @@
 import time
 import rclpy
 from rclpy.node import Node
+from rclpy.qos import QoSProfile, DurabilityPolicy
 from geometry_msgs.msg import PoseStamped
 from std_msgs.msg import String
 
@@ -19,6 +20,10 @@ class MotionPlannerNode(Node):
         self.ur_arm_409 = self.ur5e.get_planning_component("409_ur5e_arm")
         self.ur_arm_410 = self.ur5e.get_planning_component("410_ur5e_arm")
 
+        # Publisher for motion status feedback
+        qos_profile = QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
+        self.status_publisher = self.create_publisher(String, "motion_status", qos_profile)
+
         # Subscribe to pose goals for both robots
         self.create_subscription(PoseStamped, "pose_goal_409", self.pose_goal_409_callback, 10)
         self.create_subscription(PoseStamped, "pose_goal_410", self.pose_goal_410_callback, 10)
@@ -29,19 +34,16 @@ class MotionPlannerNode(Node):
         # Current active robot (default to 409)
         self.active_robot = "409"
         
+        # Planning parameters
+        self.max_planning_attempts = 50  # Maximum attempts before giving up
+        self.planning_retry_delay = 1.0  # Delay between retries in seconds
+        
         # Allow MoveIt to initialize
         time.sleep(10.0)
 
         # Set default start states
         self.robot_model = self.ur5e.get_robot_model()
         self.robot_state = RobotState(self.robot_model)
-        
-        # Set both robots to home position
-        self.ur_arm_409.set_goal_state(configuration_name="home")
-        self.ur_arm_409.set_start_state_to_current_state()
-        
-        self.ur_arm_410.set_goal_state(configuration_name="home")
-        self.ur_arm_410.set_start_state_to_current_state()
         
         time.sleep(2.0)
 
@@ -52,25 +54,72 @@ class MotionPlannerNode(Node):
 
     def pose_goal_409_callback(self, msg):
         self.get_logger().info(f"Received pose goal for robot 409: {msg}")
-        self.execute_motion_plan(self.ur_arm_409, msg, "409_ur5e_tool0")
+        self.execute_motion_plan_with_retry(self.ur_arm_409, msg, "409_ur5e_tool0", "409")
 
     def pose_goal_410_callback(self, msg):
         self.get_logger().info(f"Received pose goal for robot 410: {msg}")
-        self.execute_motion_plan(self.ur_arm_410, msg, "410_ur5e_tool0")
+        self.execute_motion_plan_with_retry(self.ur_arm_410, msg, "410_ur5e_tool0", "410")
+
+    def execute_motion_plan_with_retry(self, arm, pose_msg, tool_frame, robot_id):
+        """Execute motion plan with continuous retries until success."""
+        attempt = 1
+        
+        while attempt <= self.max_planning_attempts:
+            self.get_logger().info(f"Planning attempt {attempt}/{self.max_planning_attempts} for robot {robot_id}")
+            
+            success = self.execute_motion_plan(arm, pose_msg, tool_frame)
+            
+            if success:
+                self.get_logger().info(f"✅ Motion planning SUCCEEDED for robot {robot_id} on attempt {attempt}")
+                # Publish success status
+                status_msg = String()
+                status_msg.data = "SUCCEEDED"
+                self.status_publisher.publish(status_msg)
+                return
+            else:
+                self.get_logger().warn(f"❌ Motion planning FAILED for robot {robot_id} on attempt {attempt}")
+                if attempt < self.max_planning_attempts:
+                    self.get_logger().info(f"Retrying in {self.planning_retry_delay} seconds...")
+                    time.sleep(self.planning_retry_delay)
+                attempt += 1
+        
+        # If we reach here, all attempts failed
+        self.get_logger().error(f"🚫 CRITICAL: Motion planning FAILED for robot {robot_id} after {self.max_planning_attempts} attempts")
+        status_msg = String()
+        status_msg.data = "FAILED"
+        self.status_publisher.publish(status_msg)
 
     def execute_motion_plan(self, arm, pose_msg, tool_frame):
-        arm.set_start_state_to_current_state()
-        arm.set_goal_state(pose_stamped_msg=pose_msg, pose_link=tool_frame)
+        """Execute a single motion plan attempt. Returns True if successful, False otherwise."""
+        try:
+            arm.set_start_state_to_current_state()
+            arm.set_goal_state(pose_stamped_msg=pose_msg, pose_link=tool_frame)
 
-        # Plan and execute using both planners
-        plan_params = MultiPipelinePlanRequestParameters(self.ur5e, ["ompl_rrtc", "pilz_lin"])
-        plan_result = arm.plan(multi_plan_parameters=plan_params)
+            # Plan using both planners - these already include collision checking
+            plan_params = MultiPipelinePlanRequestParameters(self.ur5e, ["ompl_rrtc", "pilz_lin"])
+            plan_result = arm.plan(multi_plan_parameters=plan_params)
 
-        if plan_result:
-            self.get_logger().info("Executing plan")
-            self.ur5e.execute(plan_result.trajectory, controllers=[])
-        else:
-            self.get_logger().error("Planning failed")
+            if plan_result:
+                robot_trajectory = plan_result.trajectory
+                
+                self.get_logger().info("Plan found, executing...")
+                
+                # Execute the trajectory
+                success = self.ur5e.execute(robot_trajectory, controllers=[])
+                
+                if success:
+                    self.get_logger().info("Execution completed successfully")
+                    return True
+                else:
+                    self.get_logger().error("Execution failed")
+                    return False
+            else:
+                self.get_logger().warn("No valid plan found - may be due to collision detection or unreachable goal")
+                return False
+        
+        except Exception as e:
+            self.get_logger().error(f"Exception during planning/execution: {str(e)}")
+            return False
 
 def main(args=None):
     rclpy.init(args=args)

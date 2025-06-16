@@ -20,6 +20,8 @@ find_package(moveit_ros_move_group REQUIRED)
 install(PROGRAMS
   scripts/motion_planning_python_api.py
   scripts/pick_place_master.py
+  scripts/publisher_node.py
+  scripts/pick_place_god.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

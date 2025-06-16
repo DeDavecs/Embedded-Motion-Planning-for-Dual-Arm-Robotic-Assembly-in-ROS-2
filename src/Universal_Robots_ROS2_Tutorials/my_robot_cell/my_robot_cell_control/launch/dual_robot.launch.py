@@ -119,10 +119,8 @@ def generate_launch_description():
         name="dashboard_client_409",
         output="screen",
         condition=UnlessCondition(use_mock_hardware),
+        namespace="robot_409",
         parameters=[{"robot_ip": robot_409_ip}],
-        remappings=[
-            ("dashboard_client", "409_dashboard_client"),
-        ],
     )
 
     # Dashboard client for robot 410
@@ -132,10 +130,8 @@ def generate_launch_description():
         name="dashboard_client_410",
         output="screen",
         condition=UnlessCondition(use_mock_hardware),
+        namespace="robot_410",
         parameters=[{"robot_ip": robot_410_ip}],
-        remappings=[
-            ("dashboard_client", "410_dashboard_client"),
-        ],
     )
 
     # Robot state helper for robot 409
@@ -145,12 +141,10 @@ def generate_launch_description():
         name="ur_robot_state_helper_409",
         output="screen",
         condition=UnlessCondition(use_mock_hardware),
+        namespace="robot_409",
         parameters=[
             {"robot_ip": robot_409_ip},
             {"tf_prefix": "409_ur5e_"},
-        ],
-        remappings=[
-            ("robot_state_helper", "409_robot_state_helper"),
         ],
     )
 
@@ -161,12 +155,10 @@ def generate_launch_description():
         name="ur_robot_state_helper_410",
         output="screen",
         condition=UnlessCondition(use_mock_hardware),
+        namespace="robot_410",
         parameters=[
             {"robot_ip": robot_410_ip},
             {"tf_prefix": "410_ur5e_"},
-        ],
-        remappings=[
-            ("robot_state_helper", "410_robot_state_helper"),
         ],
     )
 
@@ -177,10 +169,8 @@ def generate_launch_description():
         name="urscript_interface_409",
         output="screen",
         condition=UnlessCondition(use_mock_hardware),
+        namespace="robot_409",
         parameters=[{"robot_ip": robot_409_ip}],
-        remappings=[
-            ("urscript_interface", "409_urscript_interface"),
-        ],
     )
 
     # URScript interface for robot 410
@@ -190,10 +180,8 @@ def generate_launch_description():
         name="urscript_interface_410",
         output="screen",
         condition=UnlessCondition(use_mock_hardware),
+        namespace="robot_410",
         parameters=[{"robot_ip": robot_410_ip}],
-        remappings=[
-            ("urscript_interface", "410_urscript_interface"),
-        ],
     )
 
     # Controller stopper for robot 409
@@ -203,6 +191,7 @@ def generate_launch_description():
         name="controller_stopper_409",
         output="screen",
         condition=UnlessCondition(use_mock_hardware),
+        namespace="robot_409",
         parameters=[
             {"headless_mode": False},
             {"joint_controller_active": True},
@@ -214,9 +203,6 @@ def generate_launch_description():
                 "scaled_joint_trajectory_controller",
             ]},
         ],
-        remappings=[
-            ("controller_stopper", "409_controller_stopper"),
-        ],
     )
 
     # Controller stopper for robot 410
@@ -226,15 +212,13 @@ def generate_launch_description():
         name="controller_stopper_410",
         output="screen",
         condition=UnlessCondition(use_mock_hardware),
+        namespace="robot_410",
         parameters=[
             {"headless_mode": False},
             {"joint_controller_active": True},
             {"consistent_controllers": [
                 "robot_410_scaled_joint_trajectory_controller",
             ]},
-        ],
-        remappings=[
-            ("controller_stopper", "410_controller_stopper"),
         ],
     )
 
@@ -308,13 +292,13 @@ def generate_launch_description():
         ],
     )
 
-    # Motion Planning Python API Node
-    motion_planning_node = Node(
-        name="motion_planner_node",
-        executable="python3",
-        arguments=[os.path.join(get_package_share_directory("motion_planning"), "scripts", "motion_planning_python_api.py")],
+    # Create the motion planning Python API node
+    moveit_py_node = Node(
+        name="moveit_py",
+        package="motion_planning",
+        executable="motion_planning_python_api.py",
         output="screen",
-        parameters=[moveit_config.to_dict()],
+        parameters=[moveit_config.to_dict()]
     )
 
     # Create the launch description
@@ -335,6 +319,6 @@ def generate_launch_description():
             controller_spawner_410,
             move_group_node,
             rviz_node,
-            motion_planning_node,
+            moveit_py_node,
         ]
     )

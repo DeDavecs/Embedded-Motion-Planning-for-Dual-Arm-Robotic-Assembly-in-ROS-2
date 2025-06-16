@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped
@@ -33,13 +34,13 @@ class PoseGoalPublisher(Node):
             # Then, send a goal to robot 410
             msg = PoseStamped()
             msg.header.frame_id = "table"
-            msg.pose.position.x = 0.2
-            msg.pose.position.y = -0.3
-            msg.pose.position.z = 0.8
-            msg.pose.orientation.x = 0.0
+            msg.pose.position.x = -0.2
+            msg.pose.position.y = -0.2
+            msg.pose.position.z = 0.25
+            msg.pose.orientation.x = 1.0
             msg.pose.orientation.y = 0.0
             msg.pose.orientation.z = 0.0
-            msg.pose.orientation.w = 1.0
+            msg.pose.orientation.w = 0.0
             self.publisher_410.publish(msg)
             self.get_logger().info("Published pose goal for robot 410!")
             
