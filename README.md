@@ -1,4 +1,4 @@
-# UR5e_Assembly_of_Wooden_Pieces
+# Embedded Motion Planning for Dual-Arm Robotic Assembly in ROS 2
 Bimanual robot motion planning using ros2-jazzy in moveit. The goal is the assembly of wooden objects from individual pieces using 2 Universal Robots UR5e and a onrobot 2fg7 gripper. Also, the setup is structured in a modular way, that makes it possible to add different end effectors. 
 
 ## What you need to get started
