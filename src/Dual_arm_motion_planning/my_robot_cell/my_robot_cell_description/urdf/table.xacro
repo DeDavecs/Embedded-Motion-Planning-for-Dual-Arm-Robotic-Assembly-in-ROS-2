@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:macro name="table" params="parent *origin">
+  <!-- Maintainer information -->
+  <maintainer email="dstreib@ethz.ch">David Streib</maintainer>
+  <creator>Andrin Schälin</creator>
+  <last_updated>2025-06-16</last_updated>
+  <description>Table for the UR5e robot cell.</description>
+    
+    
+    
+    <joint name="table_base_joint" type="fixed">
+      <parent link="world" />
+      <child link="table" />
+      <origin rpy="0 0 0" xyz="0 0 0.9"/>
+    </joint>
+
+    <link name="table">
+      <visual>
+        <geometry>
+          <box size="1.2 0.8 0.9"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 -0.45"/>
+        <material name="black">
+          <color rgba="0.2 0.2 0.2 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="1.2 0.8 0.9"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 -0.45"/>
+      </collision>
+      <inertial>
+        <mass value="40.0"/>
+        <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+      </inertial>
+    </link>
+
+
+    <joint name="409_robot_base_plate_joint" type="fixed">
+      <parent link="table" />
+      <child link="409_robot_base_plate"/>
+      <origin rpy="0 0 0" xyz="-0.52 0.32 0.02"/>
+    </joint>
+
+    <link name="409_robot_base_plate">
+      <visual>
+        <geometry>
+          <box size="0.16 0.16 0.02"/>
+        </geometry>
+        <origin xyz= "0 0 -0.01"/>
+        <material name="grey">
+          <color rgba="0.5 0.5 0.5 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.16 0.16 0.01999"/>
+        </geometry>
+        <origin xyz= "0 0 -0.01"/>
+      </collision>
+      <inertial>
+        <mass value="2.0"/>
+        <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+      </inertial>
+    </link>
+
+
+    <joint name="410_robot_base_plate_joint" type="fixed">
+      <parent link="table" />
+      <child link="410_robot_base_plate"/>
+      <origin rpy="0 0 0" xyz="0.52 -0.32 0.02"/>
+    </joint>
+
+    <link name="410_robot_base_plate">
+      <visual>
+        <geometry>
+          <box size="0.16 0.16 0.02"/>
+        </geometry>
+        <origin xyz= "0 0 -0.01"/>
+        <material name="grey">
+          <color rgba="0.5 0.5 0.5 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="0.16 0.16 0.01999"/>
+        </geometry>
+        <origin xyz= "0 0 -0.01"/>
+      </collision>
+      <inertial>
+        <mass value="2.0"/>
+        <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+      </inertial>
+    </link>
+
+
+  </xacro:macro>
+</robot> 
+
+

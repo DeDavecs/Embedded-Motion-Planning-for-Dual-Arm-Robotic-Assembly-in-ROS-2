@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<robot name="my_robot_cell" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Maintainer information -->
+  <maintainer email="dstreib@ethz.ch">David Streib</maintainer>
+  
+  <!--First, include the macro from our custom description-->
+  <xacro:include filename="$(find my_robot_cell_description)/urdf/my_robot_cell_macro.xacro"/>
+  <!--The driver already provides a control tag for the UR arm, we can directly include-->
+  <xacro:include filename="$(find ur_robot_driver)/urdf/ur.ros2_control.xacro"/>
+  <xacro:include filename="$(find my_robot_cell_description)/urdf/table.xacro"/>
+  <xacro:include filename="$(find my_robot_cell_description)/urdf/safety_wall.xacro"/>
+
+  <!--We need to specify the arguments used for parametrizing our description-->
+  <xacro:arg name="ur_type" default="ur5e"/>
+  <xacro:arg name="joint_limit_parameters_file" default="$(find ur_description)/config/$(arg ur_type)/joint_limits.yaml"/>
+  <xacro:arg name="kinematics_parameters_file" default="$(find ur_description)/config/$(arg ur_type)/default_kinematics.yaml"/>
+  <xacro:arg name="physical_parameters_file" default="$(find ur_description)/config/$(arg ur_type)/physical_parameters.yaml"/>
+  <xacro:arg name="visual_parameters_file" default="$(find ur_description)/config/$(arg ur_type)/visual_parameters.yaml"/>
+
+  <xacro:arg name="robot_409_ip" default="192.168.1.100"/>
+  <xacro:arg name="robot_410_ip" default="192.168.1.103"/>
+  <xacro:arg name="headless_mode" default="false" />
+  <xacro:arg name="ur_script_filename" default="$(find ur_client_library)/resources/external_control.urscript"/>
+  <xacro:arg name="ur_output_recipe_filename" default="$(find ur_robot_driver)/resources/rtde_output_recipe.txt"/>
+  <xacro:arg name="ur_input_recipe_filename" default="$(find ur_robot_driver)/resources/rtde_input_recipe.txt"/>
+  <xacro:arg name="use_mock_hardware" default="false" />
+  <xacro:arg name="mock_sensor_commands" default="false" />
+
+  <link name="world" />
+
+
+  <xacro:table parent="world">
+    <origin rpy="0 0 0" xyz="0 -0 0.9"/>
+  </xacro:table>
+  
+  <xacro:safety_wall parent="world">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </xacro:safety_wall>
+  
+  <!--Create the scene description including the robot-->
+  <xacro:my_robot_cell
+    rotation="0 0 0"
+    prefix="409_"
+    parent="world"
+    ur_type="$(arg ur_type)"
+    joint_limits_parameters_file="$(arg joint_limit_parameters_file)"
+    kinematics_parameters_file="$(arg kinematics_parameters_file)"
+    physical_parameters_file="$(arg physical_parameters_file)"
+    visual_parameters_file="$(arg visual_parameters_file)"
+  >
+    <origin xyz="0 0 1" rpy="0 0 0" />
+  </xacro:my_robot_cell>
+
+  <!--Create the control tag for the UR robot-->
+  <xacro:ur_ros2_control
+    name="409_ur5e"
+    tf_prefix="409_$(arg ur_type)_"
+    kinematics_parameters_file="$(arg kinematics_parameters_file)"
+    robot_ip="$(arg robot_409_ip)"
+    script_filename="$(arg ur_script_filename)"
+    output_recipe_filename="$(arg ur_output_recipe_filename)"
+    input_recipe_filename="$(arg ur_input_recipe_filename)"
+    use_mock_hardware="$(arg use_mock_hardware)"
+    mock_sensor_commands="$(arg mock_sensor_commands)"
+    headless_mode="$(arg headless_mode)"
+    reverse_port="50001"
+    script_sender_port="50002"
+    script_command_port="50004"
+    trajectory_port="50003"
+  />
+
+  <xacro:my_robot_cell
+    rotation="0 0 -${pi/2}"
+    prefix="410_"
+    parent="world"
+    ur_type="$(arg ur_type)"
+    joint_limits_parameters_file="$(arg joint_limit_parameters_file)"
+    kinematics_parameters_file="$(arg kinematics_parameters_file)"
+    physical_parameters_file="$(arg physical_parameters_file)"
+    visual_parameters_file="$(arg visual_parameters_file)"
+>
+    <!-- Change position so it's not overlapping with first robot -->
+    <origin xyz="0 0 1" rpy="0 0 0" />  
+</xacro:my_robot_cell>
+
+  <xacro:ur_ros2_control
+    name="410_ur5e"
+    tf_prefix="410_$(arg ur_type)_"
+    kinematics_parameters_file="$(arg kinematics_parameters_file)"
+    robot_ip="$(arg robot_410_ip)"   
+    script_filename="$(arg ur_script_filename)"
+    output_recipe_filename="$(arg ur_output_recipe_filename)"
+    input_recipe_filename="$(arg ur_input_recipe_filename)"
+    use_mock_hardware="$(arg use_mock_hardware)"
+    mock_sensor_commands="$(arg mock_sensor_commands)"
+    headless_mode="$(arg headless_mode)"
+    reverse_port="50005"
+    script_sender_port="50006"
+    script_command_port="50008"
+    trajectory_port="50007"
+  />
+
+
+
+
+
+
+
+
+
+  <!--If you had more controlled devices in your description, e.g. a gripper, you can add another ros2_control tag here-->
+
+</robot>

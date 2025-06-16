@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<robot name="my_robot_cell" xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+<!-- Maintainer information -->
+  <maintainer email="dstreib@ethz.ch">David Streib</maintainer>
+  <creator>David Streib</creator>
+  <last_updated>2025-06-16</last_updated>
+  <description>Complete robot cell description.</description>
+
+  <xacro:include filename="$(find my_robot_cell_description)/urdf/my_robot_cell_macro.xacro"/>
+  <xacro:include filename="$(find my_robot_cell_description)/urdf/table.xacro"/>
+  <xacro:include filename="$(find my_robot_cell_description)/urdf/safety_wall.xacro"/>
+
+  <xacro:arg name="ur_type" default="ur5e"/>
+  <xacro:arg name="joint_limits_parameters_file" default="$(find ur_description)/config/$(arg ur_type)/joint_limits.yaml"/>
+  <xacro:arg name="kinematics_parameters_file" default="$(find ur_description)/config/$(arg ur_type)/default_kinematics.yaml"/>
+  <xacro:arg name="physical_parameters_file" default="$(find ur_description)/config/$(arg ur_type)/physical_parameters.yaml"/>
+  <xacro:arg name="visual_parameters_file" default="$(find ur_description)/config/$(arg ur_type)/visual_parameters.yaml"/>
+
+  <link name="world"/>
+  <!--This will create the scene where the robot is located in-->
+  
+  <xacro:table parent="world">
+    <origin rpy="0 0 0" xyz="0 -0 0.9"/>
+  </xacro:table>
+  
+  <xacro:safety_wall parent="world">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </xacro:safety_wall>
+  
+  
+  <xacro:my_robot_cell
+    rotation="0 0 0"
+    parent="world"
+    prefix="409_"
+    ur_type="$(arg ur_type)"
+    joint_limits_parameters_file="$(arg joint_limits_parameters_file)"
+    kinematics_parameters_file="$(arg kinematics_parameters_file)"
+    physical_parameters_file="$(arg physical_parameters_file)"
+    visual_parameters_file="$(arg visual_parameters_file)"
+    >
+      <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:my_robot_cell>
+
+  <xacro:my_robot_cell
+    rotation="0 0  -${pi/2}"
+    parent="world"
+    prefix="410_"
+    ur_type="$(arg ur_type)"
+    joint_limits_parameters_file="$(arg joint_limits_parameters_file)"
+    kinematics_parameters_file="$(arg kinematics_parameters_file)"
+    physical_parameters_file="$(arg physical_parameters_file)"
+    visual_parameters_file="$(arg visual_parameters_file)"
+    >
+      <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:my_robot_cell>
+
+
+</robot>
