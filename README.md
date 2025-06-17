@@ -54,7 +54,6 @@ Bimanual robot motion planning using ros2-jazzy in moveit. The goal is the assem
   ```
   use_mock_hardware:= false
   ```
-default: "true"
 
 * Now, you can launch the demo script or your own Python_API built motion plan. For instance, launch:
   ```
