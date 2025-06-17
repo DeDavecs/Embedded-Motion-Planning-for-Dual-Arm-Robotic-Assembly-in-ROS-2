@@ -1,0 +1,73 @@
+├── LICENSE
+└── my_robot_cell
+    ├── motion_planning
+    │   ├── CMakeLists.txt
+    │   ├── LICENSE
+    │   ├── config
+    │   │   └── motion_planning_python_api.yaml
+    │   ├── package.xml
+    │   └── scripts
+    │       ├── motion_planning_python_api.py
+    │       ├── pick_and_place_example.py
+    │       └── publisher_node.py
+    ├── moveit_config
+    │   ├── CMakeLists.txt
+    │   ├── config
+    │   │   ├── initial_positions.yaml
+    │   │   ├── joint_limits.yaml
+    │   │   ├── kinematics.yaml
+    │   │   ├── moveit.rviz
+    │   │   ├── moveit_controllers.yaml
+    │   │   ├── my_robot_cell.ros2_control.xacro
+    │   │   ├── my_robot_cell.srdf
+    │   │   ├── my_robot_cell.urdf.xacro
+    │   │   ├── pilz_cartesian_limits.yaml
+    │   │   └── ros2_controllers.yaml
+    │   ├── launch
+    │   │   ├── README.txt
+    │   │   ├── demo.launch.py
+    │   │   ├── move_group.launch.py
+    │   │   ├── moveit_rviz.launch.py
+    │   │   ├── rsp.launch.py
+    │   │   ├── setup_assistant.launch.py
+    │   │   ├── spawn_controllers.launch.py
+    │   │   ├── static_virtual_joint_tfs.launch.py
+    │   │   └── warehouse_db.launch.py
+    │   ├── links_joints.pdf
+    │   └── package.xml
+    ├── my_robot_cell_control
+    │   ├── CMakeLists.txt
+    │   ├── LICENSE
+    │   ├── config
+    │   │   ├── 409_controllers.yaml
+    │   │   ├── dual_robot_controllers.yaml
+    │   │   └── my_robot_calibration.yaml
+    │   ├── launch
+    │   │   ├── dual_robot.launch.py
+    │   │   ├── rsp.launch.py
+    │   │   └── single_arm_launch_example.py
+    │   ├── package.xml
+    │   └── urdf
+    │       └── my_robot_cell_controlled.urdf.xacro
+    └── my_robot_cell_description
+        ├── CMakeLists.txt
+        ├── LICENSE
+        ├── launch
+        │   └── view_robot.launch.py
+        ├── meshes
+        │   └── ideal_lab_team.jpg
+        ├── package.xml
+        ├── rviz
+        │   └── urdf.rviz
+        └── urdf
+            ├── 2fg7_gripper
+            │   ├── meshes
+            │   │   ├── onrobot_2fg7_base.stl
+            │   │   └── onrobot_2fg7_finger.stl
+            │   └── urdf
+            │       └── onrobot_2fg7_gripper.urdf.xacro
+            ├── box.xacro
+            ├── my_robot_cell.urdf.xacro
+            ├── my_robot_cell_macro.xacro
+            ├── safety_wall.xacro
+            └── table.xacro
