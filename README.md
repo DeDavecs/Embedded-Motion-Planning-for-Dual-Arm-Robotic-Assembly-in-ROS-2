@@ -44,7 +44,7 @@ Bimanual robot motion planning using ros2-jazzy in moveit. The goal is the assem
   
 * Start the graphical interface RViz and launch MoveIt with:
   ```
-  ros2 launch my_robot_cell_control combined_simulation.launch.py 
+  ros2 launch my_robot_cell_control dual_robot.launch.py use_mock_hardware:=true
   ```
   
   Note, you can add/change the following arguments, depending on the ip adress or if your connected to real hardware:
@@ -58,5 +58,6 @@ default: "true"
 
 * Now, you can launch the demo script or your own Python_API built motion plan. For instance, launch:
   ```
-  python3 INSERT NAME
+  ros2 run motion_planning pick_and_place_example.py 
+
   ```
