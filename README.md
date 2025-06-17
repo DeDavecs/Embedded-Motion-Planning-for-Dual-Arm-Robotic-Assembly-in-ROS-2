@@ -59,5 +59,4 @@ default: "true"
 * Now, you can launch the demo script or your own Python_API built motion plan. For instance, launch:
   ```
   ros2 run motion_planning pick_and_place_example.py 
-
   ```
