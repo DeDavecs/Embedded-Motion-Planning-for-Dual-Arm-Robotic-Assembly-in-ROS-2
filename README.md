@@ -1,9 +1,16 @@
 # Embedded Motion Planning for Dual-Arm Robotic Assembly in ROS 2
 Bimanual robot motion planning using ros2-jazzy in moveit. The goal is the assembly of wooden objects from individual pieces using 2 Universal Robots UR5e and a onrobot 2fg7 gripper. Also, the setup is structured in a modular way, that makes it possible to add different end effectors. 
 
+## Features
+- Dual UR5e setup with gripper integration
+- Modular architecture with 4 ROS 2 packages
+- Python-based motion planning API
+- Simulation and real-hardware support
+
+
 ## What you need to get started
-* ### Ros2 - jazzy installation
-  https://docs.ros.org/en/jazzy/Installation.html
+* ### ROS 2 - jazzy installation
+  Install ROS 2 Jazzy [here](https://docs.ros.org/en/jazzy/Installation.html)
   
   #### Test your installation by running
   ```
@@ -18,7 +25,7 @@ Bimanual robot motion planning using ros2-jazzy in moveit. The goal is the assem
   
 * ### MoveIT installation (from source)
 
-  https://moveit.ai/install-moveit2/source/
+  Install MoveIt2 [here](https://moveit.ai/install-moveit2/source/)
   
   Again, make sure to source the workspace or put in you .bashrc
   
@@ -28,7 +35,7 @@ Bimanual robot motion planning using ros2-jazzy in moveit. The goal is the assem
 ## Installing this repository:
 * Clone the repository int the src of your colcon workspace:
   ```
-  git clone: https://github.com/DeDavecs/UR5e_Assembly_of_Wooden_Pieces.git
+  git clone: https://github.com/DeDavecs/Embedded-Motion-Planning-for-Dual-Arm-Robotic-Assembly-in-ROS-2.git
   ```
 * Build the workspace. Within you workspace bash:
   ```
