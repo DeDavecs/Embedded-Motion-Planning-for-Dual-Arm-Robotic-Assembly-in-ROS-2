@@ -13,3 +13,4 @@ Handles the hardware interface and ROS 2 control integration for the dual UR5e s
 ros2 launch my_robot_cell_control dual_robot.launch.py use_mock_hardware:=true
 ```
 - Make sure to adjust ip addresses if necessary.
+- The single_arm_lauch_example.launch.py is no valid. However, I decided to keep it as a guidline.
